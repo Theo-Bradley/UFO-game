@@ -17,3 +17,9 @@ CMakeUserPresets.json
 .obj
 .exp
 
+#PDBs
+*.pdb
+
+ # SCons file signiatures
+.sconsign.dblite
+
