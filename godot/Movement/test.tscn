@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba37bbjx6a30k"]
+
+[ext_resource type="Shader" uid="uid://dxjljvicnjjjh" path="res://error.gdshader" id="1_ubtqr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1tsi"]
+render_priority = 0
+shader = ExtResource("1_ubtqr")
+shader_parameter/scale = 100.0
+shader_parameter/tint = Color(0.1677333, 0.85, 0.11899999, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3gamy"]
+material = SubResource("ShaderMaterial_k1tsi")
+size = Vector3(15, 0.25, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qhix"]
+size = Vector3(15, 0.25, 15)
+
+[node name="Test" type="Node3D"]
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_3gamy")
+
+[node name="Area3D" type="Area3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D"]
+visible = false
+shape = SubResource("BoxShape3D_7qhix")
+
+[node name="Player" type="Node3D" parent="."]
