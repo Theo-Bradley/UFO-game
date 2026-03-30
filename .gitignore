@@ -14,8 +14,8 @@ cmake-build*
 CMakeUserPresets.json
 
 # Binaries
-.obj
-.exp
+*.obj
+*.exp
 
 #PDBs
 *.pdb
