@@ -11,6 +11,10 @@ void PlayerMove::_bind_methods()
 	ClassDB::bind_method(D_METHOD("get_moveAccel"), &PlayerMove::get_moveAccel);
 	ClassDB::bind_method(D_METHOD("set_moveAccel", "val"), &PlayerMove::set_moveAccel);
 	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Moving Acceleration"), "set_moveAccel", "get_moveAccel");
+
+	ClassDB::bind_method(D_METHOD("get_rb"), &PlayerMove::get_rb);
+	ClassDB::bind_method(D_METHOD("set_rb", "ref"), &PlayerMove::set_rb);
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "Rigid Body", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rb", "get_rb");
 }
 
 void PlayerMove::_process(double delta)
@@ -28,37 +32,26 @@ void PlayerMove::_process(double delta)
 	}
 	if (input->get_action_strength("Forward"))
 	{
-		moveDirection += Vector2(0, 1);
+		moveDirection += Vector2(0, -1);
 	}
 	if (input->get_action_strength("Backward"))
 	{
-		moveDirection += Vector2(0, -1);
+		moveDirection += Vector2(0, 1);
 	}
 }
 
 void PlayerMove::_physics_process(double delta)
 {
-	/*
 	if (rb.is_valid())
-	Vector3 u = get_real_velocity(); //inital velocity
-	Basis basis = get_basis(); //get basis so we can make forces local
-	if (playerLook != nullptr) //if we have playerlook, we can get it's basis instead
-		basis = playerLook->get_basis(); //this makes the forces local to the PlayerLook instead of this class
-	Vector3 am = basis.xform(moveAccel * Vector3(moveDirection.x, 0.0f, -moveDirection.y)); //movement acceleration (-y because +z is into the camera)
-	Vector3 af = u.length_squared() > 0.1f ? -u.normalized() * moveFriction * Vector3(1.0f, 0.0f, 1.0f) : Vector3(0.f, 0.f, 0.f); //friction accel (no y friction)
-	//if not moving -> no friction
-	if (u.x == 0.0f)
-		af.x = 0.0f;
-	if (u.y == 0.0f)
-		af.y = 0.0f;
-	if (u.z == 0.0f)
-		af.z = 0.0f;
+	{
+		Vector2 u = Vector2(get_rb()->get_linear_velocity().x, get_rb()->get_linear_velocity().y); //inital velocity
+		//Basis basis = get_basis(); //get basis so we can make forces local
+		//if (playerLook != nullptr) //if we have playerlook, we can get it's basis instead
+		//	basis = playerLook->get_basis(); //this makes the forces local to the PlayerLook instead of this class
+		Vector2 f = get_rb()->get_mass() * (moveDirection * Math::min(Vector2(moveAccel, moveAccel), Vector2(moveSpeed, moveSpeed) - u));
 
-	Vector3 v = u + (am + af + get_gravity()) * delta; //calulate v = u + at (where a = am+af+g)
-	v = Vector3(Math::clamp(v.x, -moveSpeed, moveSpeed), v.y, Math::clamp(v.z, -moveSpeed, moveSpeed)); //clamp to movespeed on horizontal axis
-	set_velocity(v); //set velocity
-	move_and_slide(); //move
-	*/
+		get_rb()->apply_central_force(Vector3(f.x, 0.0f, f.y));
+	}
 }
 
 float PlayerMove::get_moveSpeed()

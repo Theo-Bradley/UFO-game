@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba37bbjx6a30k"]
+[gd_scene format=3 uid="uid://ba37bbjx6a30k"]
 
-[ext_resource type="Shader" uid="uid://dxjljvicnjjjh" path="res://error.gdshader" id="1_ubtqr"]
+[ext_resource type="Shader" uid="uid://dxjljvicnjjjh" path="res://Shaders/error.gdshader" id="1_ubtqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k1tsi"]
 render_priority = 0
@@ -15,17 +15,43 @@ size = Vector3(15, 0.25, 15)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qhix"]
 size = Vector3(15, 0.25, 15)
 
-[node name="Test" type="Node3D"]
+[sub_resource type="TorusMesh" id="TorusMesh_ubtqr"]
 
-[node name="Ground" type="Node3D" parent="."]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubtqr"]
+size = Vector3(1.9191895, 0.51657104, 1.924408)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+[node name="Test" type="Node3D" unique_id=1875063413]
+
+[node name="Ground" type="Node3D" parent="." unique_id=1824347149]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=403411199]
 mesh = SubResource("BoxMesh_3gamy")
 
-[node name="Area3D" type="Area3D" parent="Ground"]
+[node name="Area3D" type="Area3D" parent="Ground" unique_id=381365394]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D" unique_id=1843947801]
 visible = false
 shape = SubResource("BoxShape3D_7qhix")
 
-[node name="Player" type="Node3D" parent="."]
+[node name="Player" type="Node3D" parent="." unique_id=1461747873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7636354, 0)
+
+[node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("Rigid Body")]
+"Max Speed" = 10.0
+"Moving Acceleration" = 15.0
+"Rigid Body" = NodePath("../RigidBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Player" unique_id=1027398139]
+gravity_scale = 0.0
+linear_damp = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="Player/RigidBody3D" unique_id=792292390]
+transform = Transform3D(0.9999282, 0.006575426, -0.0100264745, -2.377346e-08, 0.8362192, 0.54839545, 0.011990264, -0.54835606, 0.83615905, 0.09680009, 2.9611685, 2.7606173)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/RigidBody3D" unique_id=109167623]
+mesh = SubResource("TorusMesh_ubtqr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D" unique_id=1052475862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207031, 0.0042877197, -0.00010681152)
+shape = SubResource("BoxShape3D_ubtqr")
