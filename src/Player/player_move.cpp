@@ -49,7 +49,6 @@ void PlayerMove::_physics_process(double delta)
 		//if (playerLook != nullptr) //if we have playerlook, we can get it's basis instead
 		//	basis = playerLook->get_basis(); //this makes the forces local to the PlayerLook instead of this class
 		Vector2 f = get_rb()->get_mass() * (moveDirection * Math::min(Vector2(moveAccel, moveAccel), Vector2(moveSpeed, moveSpeed) - u));
-
 		get_rb()->apply_central_force(Vector3(f.x, 0.0f, f.y));
 	}
 }
