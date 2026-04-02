@@ -78,10 +78,11 @@ script = ExtResource("2_3gamy")
 numRays = 20
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
-[node name="Area3D" type="Area3D" parent="Player/RigidBody3D/TractorOrigin" unique_id=1478954527]
+[node name="CollectArea" type="Area3D" parent="Player/RigidBody3D/TractorOrigin" unique_id=1478954527]
+collision_mask = 4
 script = ExtResource("3_7qhix")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D/TractorOrigin/Area3D" unique_id=137893483]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D/TractorOrigin/CollectArea" unique_id=137893483]
 shape = SubResource("SphereShape3D_660l1")
 
 [node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box", "tractor_beam")]
