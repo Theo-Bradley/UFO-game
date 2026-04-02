@@ -25,9 +25,10 @@ func _physics_process(delta: float) -> void:
 		var result = space_state.intersect_ray(query) as Dictionary;
 		if !result.is_empty():
 			var rb = result["collider"] as RigidBody3D;
-			(rb.get_parent() as Tractable).add_global_force(result["position"], global_position - result["position"]);
-			ImmediateGeo.surface_begin(Mesh.PRIMITIVE_LINES);
-			ImmediateGeo.surface_add_vertex(global_position);
-			ImmediateGeo.surface_add_vertex(result["position"]);
-			ImmediateGeo.surface_end();
+			if (!rb.get_parent().is_queued_for_deletion()):
+				(rb.get_parent() as Tractable).add_global_force(result["position"], global_position - result["position"]);
+				ImmediateGeo.surface_begin(Mesh.PRIMITIVE_LINES);
+				ImmediateGeo.surface_add_vertex(global_position);
+				ImmediateGeo.surface_add_vertex(result["position"]);
+				ImmediateGeo.surface_end();
 	pass
