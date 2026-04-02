@@ -17,6 +17,7 @@ protected:
 	ObjectID rigidbody;
 	Array positions;
 	Vector3 force_direction;
+	int points = 1;
 
 public:
 	Tractable() = default;
@@ -24,10 +25,13 @@ public:
 	void _physics_process(double delta);
 
 	void add_global_force(Vector3 global_position, Vector3 direction);
-	void add_local_force(Vector3 local_position);
+	void add_local_force(Vector3 local_position, Vector3 direction);
+	int collect();
 
 	RigidBody3D* get_rigidbody();
 	void set_rigidbody(RigidBody3D* ref);
+	int get_points();
+	void set_points(int val);
 
 	void print_type(const Variant &p_variant) const;
 };

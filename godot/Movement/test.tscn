@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://dxjljvicnjjjh" path="res://Shaders/error.gdshader" id="1_ubtqr"]
 [ext_resource type="Script" uid="uid://ck31uu4obs1vx" path="res://Movement/tractor_beam.gd" id="2_3gamy"]
 [ext_resource type="Script" uid="uid://cncia5c8rtqg6" path="res://Movement/box_spawner.gd" id="2_k1tsi"]
+[ext_resource type="Script" uid="uid://cqa15nnvcwhxb" path="res://Movement/tractor_collect.gd" id="3_7qhix"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k1tsi"]
 render_priority = 0
@@ -23,6 +24,9 @@ size = Vector3(15, 0.25, 15)
 size = Vector3(1.9191895, 0.51657104, 1.924408)
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_3gamy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_660l1"]
+radius = 0.6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k1tsi"]
 size = Vector3(0.25, 0.25, 0.25)
@@ -74,10 +78,17 @@ script = ExtResource("2_3gamy")
 numRays = 20
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
-[node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box")]
+[node name="Area3D" type="Area3D" parent="Player/RigidBody3D/TractorOrigin" unique_id=1478954527]
+script = ExtResource("3_7qhix")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D/TractorOrigin/Area3D" unique_id=137893483]
+shape = SubResource("SphereShape3D_660l1")
+
+[node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box", "tractor_beam")]
 script = ExtResource("2_k1tsi")
 number = 50
 box = NodePath("Box")
+tractor_beam = NodePath("../Player/RigidBody3D/TractorOrigin")
 
 [node name="Box" type="Tractable" parent="BoxSpawner" unique_id=1148756673 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
@@ -87,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 collision_layer = 5
 inertia = Vector3(0.25, 0.25, 0.25)
 angular_damp = 15.0
+metadata/tractable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxSpawner/Box/RigidBody3D" unique_id=1404229530]
 shape = SubResource("BoxShape3D_k1tsi")
