@@ -2,6 +2,7 @@ extends Node3D
 
 var points : Array;
 @export var numRays : int;
+@export var ImmediateGeo : ImmediateMesh;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,12 +17,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state;
+	ImmediateGeo.clear_surfaces();
 	for offset in points:
 		var query = PhysicsRayQueryParameters3D.create(global_position, global_position + Vector3(offset.x, -3.0, offset.y), 0x4);
 		var result = space_state.intersect_ray(query) as Dictionary;
 		if !result.is_empty():
 			var rb = result["collider"] as RigidBody3D;
-			var pos = rb.get_basis() * result["position"];
-			if rb != null:
-				rb.apply_force(Vector3(0.0, 9.0, 0.0), pos);
+			(rb.get_parent() as Tractable).add_global_force(result["position"], global_position - result["position"]);
+			ImmediateGeo.surface_begin(Mesh.PRIMITIVE_LINES);
+			ImmediateGeo.surface_add_vertex(global_position);
+			ImmediateGeo.surface_add_vertex(result["position"]);
+			ImmediateGeo.surface_end();
 	pass

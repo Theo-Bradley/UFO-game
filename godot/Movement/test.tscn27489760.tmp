@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ba37bbjx6a30k"]
+
+[ext_resource type="Shader" uid="uid://dxjljvicnjjjh" path="res://Shaders/error.gdshader" id="1_ubtqr"]
+[ext_resource type="Script" uid="uid://ck31uu4obs1vx" path="res://Movement/tractor_beam.gd" id="2_3gamy"]
+[ext_resource type="Script" uid="uid://cncia5c8rtqg6" path="res://Movement/box_spawner.gd" id="2_k1tsi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1tsi"]
+render_priority = 0
+shader = ExtResource("1_ubtqr")
+shader_parameter/scale = 100.0
+shader_parameter/tint = Color(0.1677333, 0.85, 0.11899999, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3gamy"]
+material = SubResource("ShaderMaterial_k1tsi")
+size = Vector3(15, 0.25, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qhix"]
+size = Vector3(15, 0.25, 15)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ubtqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubtqr"]
+size = Vector3(1.9191895, 0.51657104, 1.924408)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_3gamy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1tsi"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7qhix"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="Test" type="Node3D" unique_id=1875063413]
+
+[node name="Ground" type="Node3D" parent="." unique_id=1824347149]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=403411199]
+mesh = SubResource("BoxMesh_3gamy")
+
+[node name="Area3D" type="StaticBody3D" parent="Ground" unique_id=947143128]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Area3D" unique_id=1843947801]
+visible = false
+shape = SubResource("BoxShape3D_7qhix")
+
+[node name="Player" type="Node3D" parent="." unique_id=1461747873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7636354, 0)
+
+[node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("Rigid Body")]
+"Max Speed" = 10.0
+"Moving Acceleration" = 15.0
+"Rigid Body" = NodePath("../RigidBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Player" unique_id=1027398139]
+collision_layer = 2
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="Player/RigidBody3D" unique_id=792292390]
+transform = Transform3D(0.9999282, 0.006575426, -0.0100264745, -2.377346e-08, 0.8362192, 0.54839545, 0.011990264, -0.54835606, 0.83615905, 0.09680009, 2.9611685, 2.7606173)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/RigidBody3D" unique_id=109167623]
+mesh = SubResource("TorusMesh_ubtqr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D" unique_id=1052475862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207031, 0.0042877197, -0.00010681152)
+shape = SubResource("BoxShape3D_ubtqr")
+disabled = true
+
+[node name="TractorOrigin" type="Node3D" parent="Player/RigidBody3D" unique_id=1286012174]
+script = ExtResource("2_3gamy")
+numRays = 20
+ImmediateGeo = SubResource("ImmediateMesh_3gamy")
+
+[node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box")]
+script = ExtResource("2_k1tsi")
+number = 50
+box = NodePath("Box")
+
+[node name="Box" type="Tractable" parent="BoxSpawner" unique_id=1148756673 node_paths=PackedStringArray("RigidBody")]
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="BoxSpawner/Box" unique_id=182202758]
+collision_layer = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxSpawner/Box/RigidBody3D" unique_id=1404229530]
+shape = SubResource("BoxShape3D_k1tsi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxSpawner/Box/RigidBody3D" unique_id=833080624]
+mesh = SubResource("BoxMesh_7qhix")
+skeleton = NodePath("../..")
+
+[node name="RayCastLines" type="MeshInstance3D" parent="." unique_id=1936393373]
+mesh = SubResource("ImmediateMesh_3gamy")

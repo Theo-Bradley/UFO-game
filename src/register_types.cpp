@@ -4,8 +4,11 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
+#include <godot_cpp/classes/engine.hpp>
 
+#include "globals.h"
 #include "Player/player_move.h"
+#include "tractable.h"
 
 using namespace godot;
 
@@ -14,7 +17,10 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
+	ClassDB::register_class<Globals>();
+	Engine::get_singleton()->register_singleton("Globals", memnew(Globals));
 	GDREGISTER_RUNTIME_CLASS(PlayerMove);
+	GDREGISTER_RUNTIME_CLASS(Tractable);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

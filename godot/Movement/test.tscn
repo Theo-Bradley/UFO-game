@@ -22,6 +22,8 @@ size = Vector3(15, 0.25, 15)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ubtqr"]
 size = Vector3(1.9191895, 0.51657104, 1.924408)
 
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_3gamy"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_k1tsi"]
 size = Vector3(0.25, 0.25, 0.25)
 
@@ -70,17 +72,21 @@ disabled = true
 [node name="TractorOrigin" type="Node3D" parent="Player/RigidBody3D" unique_id=1286012174]
 script = ExtResource("2_3gamy")
 numRays = 20
+ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
 [node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box")]
 script = ExtResource("2_k1tsi")
 number = 50
 box = NodePath("Box")
 
-[node name="Box" type="Node3D" parent="BoxSpawner" unique_id=1295390797]
+[node name="Box" type="Tractable" parent="BoxSpawner" unique_id=1148756673 node_paths=PackedStringArray("RigidBody")]
+RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="BoxSpawner/Box" unique_id=182202758]
 collision_layer = 5
+inertia = Vector3(0.25, 0.25, 0.25)
+angular_damp = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxSpawner/Box/RigidBody3D" unique_id=1404229530]
 shape = SubResource("BoxShape3D_k1tsi")
@@ -88,3 +94,6 @@ shape = SubResource("BoxShape3D_k1tsi")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BoxSpawner/Box/RigidBody3D" unique_id=833080624]
 mesh = SubResource("BoxMesh_7qhix")
 skeleton = NodePath("../..")
+
+[node name="RayCastLines" type="MeshInstance3D" parent="." unique_id=1936393373]
+mesh = SubResource("ImmediateMesh_3gamy")

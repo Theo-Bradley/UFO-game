@@ -76,7 +76,7 @@ void PlayerMove::set_moveAccel(float val)
 
 RigidBody3D* PlayerMove::get_rb()
 {
-	return 	Object::cast_to<RigidBody3D>(ObjectDB::get_instance(rb));
+	return Object::cast_to<RigidBody3D>(ObjectDB::get_instance(rb));
 }
 
 void PlayerMove::set_rb(RigidBody3D* ref)
