@@ -1,0 +1,5 @@
+Added code to rotate PlayerMove towards the move_direction when moving at a rate of turn_speed radians per second
+Updated Tractable::add_local_force to also take direction just like global version
+Removed various debug print_line in Tractable
+Changed PlayerMove to use snake case as per godot paradigms for its paramters and methods
+

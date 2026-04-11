@@ -4,13 +4,17 @@ void PlayerMove::_bind_methods()
 {
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &PlayerMove::print_type);
 
-	ClassDB::bind_method(D_METHOD("get_moveSpeed"), &PlayerMove::get_moveSpeed);
-	ClassDB::bind_method(D_METHOD("set_moveSpeed", "val"), &PlayerMove::set_moveSpeed);
-	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Max Speed"), "set_moveSpeed", "get_moveSpeed");
+	ClassDB::bind_method(D_METHOD("get_move_speed"), &PlayerMove::get_move_speed);
+	ClassDB::bind_method(D_METHOD("set_move_speed", "val"), &PlayerMove::set_move_speed);
+	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Max Speed"), "set_move_speed", "get_move_speed");
 
-	ClassDB::bind_method(D_METHOD("get_moveAccel"), &PlayerMove::get_moveAccel);
-	ClassDB::bind_method(D_METHOD("set_moveAccel", "val"), &PlayerMove::set_moveAccel);
-	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Moving Acceleration"), "set_moveAccel", "get_moveAccel");
+	ClassDB::bind_method(D_METHOD("get_move_accel"), &PlayerMove::get_move_accel);
+	ClassDB::bind_method(D_METHOD("set_move_accel", "val"), &PlayerMove::set_move_accel);
+	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Moving Acceleration"), "set_move_accel", "get_move_accel");
+
+	ClassDB::bind_method(D_METHOD("get_turn_speed"), &PlayerMove::get_turn_speed);
+	ClassDB::bind_method(D_METHOD("set_turn_speed", "val"), &PlayerMove::set_turn_speed);
+	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Turning Speed"), "set_turn_speed", "get_turn_speed");
 
 	ClassDB::bind_method(D_METHOD("get_rb"), &PlayerMove::get_rb);
 	ClassDB::bind_method(D_METHOD("set_rb", "ref"), &PlayerMove::set_rb);
@@ -21,22 +25,22 @@ void PlayerMove::_process(double delta)
 {
 #define input Input::get_singleton()
 
-	moveDirection = Vector2(0, 0);
+	move_direction = Vector2(0, 0);
 	if (input->get_action_strength("Left"))
 	{
-		moveDirection += Vector2(-1, 0);
+		move_direction += Vector2(-1, 0);
 	}
 	if (input->get_action_strength("Right"))
 	{
-		moveDirection += Vector2(1, 0);
+		move_direction += Vector2(1, 0);
 	}
 	if (input->get_action_strength("Forward"))
 	{
-		moveDirection += Vector2(0, -1);
+		move_direction += Vector2(0, -1);
 	}
 	if (input->get_action_strength("Backward"))
 	{
-		moveDirection += Vector2(0, 1);
+		move_direction += Vector2(0, 1);
 	}
 }
 
@@ -44,34 +48,49 @@ void PlayerMove::_physics_process(double delta)
 {
 	if (rb.is_valid())
 	{
-		Vector2 u = Vector2(get_rb()->get_linear_velocity().x, get_rb()->get_linear_velocity().y); //inital velocity
-		//Basis basis = get_basis(); //get basis so we can make forces local
-		//if (playerLook != nullptr) //if we have playerlook, we can get it's basis instead
-		//	basis = playerLook->get_basis(); //this makes the forces local to the PlayerLook instead of this class
-		Vector2 f = get_rb()->get_mass() * (moveDirection * Math::min(Vector2(moveAccel, moveAccel), Vector2(moveSpeed, moveSpeed) - u));
-		get_rb()->apply_central_force(Vector3(f.x, 0.0f, f.y));
+		RigidBody3D* ref = get_rb();
+		Vector2 u = Vector2(ref->get_linear_velocity().x, ref->get_linear_velocity().y); //inital velocity
+		Vector2 f = ref->get_mass() * (move_direction * Math::min(Vector2(move_accel, move_accel), Vector2(move_speed, move_speed) - u));
+		if (f.length() > 0)
+		{
+			Vector3 forward = ref->get_basis().rows[2].normalized();
+			float angle = forward.signed_angle_to(Vector3(f.normalized().x, 0.0f, -f.normalized().y), Vector3(0.f, -1.f, 0.f));
+			if (angle != 0)
+				get_rb()->rotate_y(Math::min(turn_speed * (float)delta, Math::abs(angle)) * Math::abs(angle) / angle);
+		}
+		ref->apply_central_force(Vector3(f.x, 0.0f, f.y));
 	}
 }
 
-float PlayerMove::get_moveSpeed()
+float PlayerMove::get_move_speed()
 {
-	return moveSpeed;
+	return move_speed;
 }
 
-void PlayerMove::set_moveSpeed(float val)
+void PlayerMove::set_move_speed(float val)
 {
-	moveSpeed = val;
+	move_speed = val;
 }
 
 
-float PlayerMove::get_moveAccel()
+float PlayerMove::get_move_accel()
 {
-	return moveAccel;
+	return move_accel;
 }
 
-void PlayerMove::set_moveAccel(float val)
+void PlayerMove::set_move_accel(float val)
 {
-	moveAccel = val;
+	move_accel = val;
+}
+
+float PlayerMove::get_turn_speed()
+{
+	return turn_speed;
+}
+
+void PlayerMove::set_turn_speed(float val)
+{
+	turn_speed = val;
 }
 
 RigidBody3D* PlayerMove::get_rb()

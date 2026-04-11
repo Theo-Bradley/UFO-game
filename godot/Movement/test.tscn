@@ -57,53 +57,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7636354, 0)
 [node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("Rigid Body")]
 "Max Speed" = 10.0
 "Moving Acceleration" = 15.0
-"Rigid Body" = NodePath("../RigidBody3D")
+"Turning Speed" = 18.912
+"Rigid Body" = NodePath("RigidBody3D")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Player" unique_id=1027398139]
+[node name="RigidBody3D" type="RigidBody3D" parent="Player/PlayerMove" unique_id=1027398139]
 collision_layer = 2
 collision_mask = 3
 gravity_scale = 0.0
 linear_damp = 2.0
 
-[node name="Camera3D" type="Camera3D" parent="Player/RigidBody3D" unique_id=792292390]
-transform = Transform3D(0.9999282, 0.006575426, -0.0100264745, -2.377346e-08, 0.8362192, 0.54839545, 0.011990264, -0.54835606, 0.83615905, 0.09680009, 2.9611685, 2.7606173)
-
-[node name="DonutMesh" type="MeshInstance3D" parent="Player/RigidBody3D" unique_id=109167623]
+[node name="DonutMesh" type="MeshInstance3D" parent="Player/PlayerMove/RigidBody3D" unique_id=109167623]
 mesh = SubResource("TorusMesh_ubtqr")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="ForwardMesh" type="MeshInstance3D" parent="Player/RigidBody3D" unique_id=107970452]
+[node name="ForwardMesh" type="MeshInstance3D" parent="Player/PlayerMove/RigidBody3D" unique_id=107970452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7397038)
 mesh = SubResource("SphereMesh_7qhix")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D" unique_id=1052475862]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerMove/RigidBody3D" unique_id=1052475862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207031, 0.0042877197, -0.00010681152)
 shape = SubResource("BoxShape3D_ubtqr")
 disabled = true
 
-[node name="TractorOrigin" type="Node3D" parent="Player/RigidBody3D" unique_id=1286012174]
+[node name="TractorOrigin" type="Node3D" parent="Player/PlayerMove/RigidBody3D" unique_id=1286012174]
 script = ExtResource("2_3gamy")
 numRays = 20
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
-[node name="TractorMesh" type="MeshInstance3D" parent="Player/RigidBody3D/TractorOrigin" unique_id=1936393373]
+[node name="TractorMesh" type="MeshInstance3D" parent="Player/PlayerMove/RigidBody3D/TractorOrigin" unique_id=1936393373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7636354, 0)
 material_override = SubResource("StandardMaterial3D_7qhix")
 mesh = SubResource("ImmediateMesh_3gamy")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="CollectArea" type="Area3D" parent="Player/RigidBody3D/TractorOrigin" unique_id=1478954527]
+[node name="CollectArea" type="Area3D" parent="Player/PlayerMove/RigidBody3D/TractorOrigin" unique_id=1478954527]
 collision_mask = 4
 script = ExtResource("3_7qhix")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D/TractorOrigin/CollectArea" unique_id=137893483]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerMove/RigidBody3D/TractorOrigin/CollectArea" unique_id=137893483]
 shape = SubResource("SphereShape3D_660l1")
+
+[node name="Camera3D" type="Camera3D" parent="Player/PlayerMove" unique_id=792292390]
+transform = Transform3D(0.9999282, 0.006575426, -0.0100264745, -2.377346e-08, 0.8362192, 0.54839545, 0.011990264, -0.54835606, 0.83615905, 0.09680009, 2.9611685, 2.7606173)
 
 [node name="BoxSpawner" type="Node3D" parent="." unique_id=230786167 node_paths=PackedStringArray("box", "tractor_beam")]
 script = ExtResource("2_k1tsi")
 number = 50
 box = NodePath("Box")
-tractor_beam = NodePath("../Player/RigidBody3D/TractorOrigin")
+tractor_beam = NodePath("../Player/PlayerMove/RigidBody3D/TractorOrigin")
 
 [node name="Box" type="Tractable" parent="BoxSpawner" unique_id=1148756673 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")

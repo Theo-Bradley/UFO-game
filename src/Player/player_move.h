@@ -14,9 +14,10 @@ class PlayerMove : public Node3D {
 
 protected:
 	static void _bind_methods();
-	float moveAccel = 1.0;
-	float moveSpeed = 5.0;
-	Vector2 moveDirection = Vector2(0.0f, 0.0f);
+	float move_accel = 1.0;
+	float move_speed = 5.0;
+	float turn_speed = 0.1f; //rad*sec^-1
+	Vector2 move_direction = Vector2(0.0f, 0.0f);
 	ObjectID rb;
 
 public:
@@ -27,10 +28,12 @@ public:
 	void _process(double delta);
 	void _physics_process(double delta);
 
-	float get_moveSpeed();
-	void set_moveSpeed(float val);
-	float get_moveAccel();
-	void set_moveAccel(float val);
+	float get_move_speed();
+	void set_move_speed(float val);
+	float get_move_accel();
+	void set_move_accel(float val);
+	float get_turn_speed();
+	void set_turn_speed(float val);
 	RigidBody3D* get_rb();
 	void set_rb(RigidBody3D* ref);
 };

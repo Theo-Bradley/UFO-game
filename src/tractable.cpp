@@ -49,7 +49,6 @@ void Tractable::add_local_force(Vector3 local_position, Vector3 direction)
 int Tractable::collect()
 {
 	queue_free();
-	print_line(points);
 	return points;
 }
 
@@ -68,7 +67,6 @@ void Tractable::_physics_process(double delta)
 		if (n > 0)
 		{
 			mean_pos = mean_pos / n;
-			print_line("n: ", n, " mean_pos: ", mean_pos);
 			if (rigidbody.is_valid())
 			{
 				get_rigidbody()->apply_impulse(force * force_direction.normalized(), mean_pos);
