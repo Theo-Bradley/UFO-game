@@ -9,6 +9,7 @@
 #include "globals.h"
 #include "Player/player_move.h"
 #include "tractable.h"
+#include "camera_follow.h"
 
 using namespace godot;
 
@@ -21,6 +22,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	Engine::get_singleton()->register_singleton("Globals", memnew(Globals));
 	GDREGISTER_RUNTIME_CLASS(PlayerMove);
 	GDREGISTER_RUNTIME_CLASS(Tractable);
+	GDREGISTER_RUNTIME_CLASS(CameraFollow);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

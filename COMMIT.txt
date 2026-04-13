@@ -1,5 +1,15 @@
-Added code to rotate PlayerMove towards the move_direction when moving at a rate of turn_speed radians per second
-Updated Tractable::add_local_force to also take direction just like global version
-Removed various debug print_line in Tractable
-Changed PlayerMove to use snake case as per godot paradigms for its paramters and methods
+Added basic follow camera with the CameraFollow class
+Uses array based delay to follow the camera a few frames behind
+Target is the Node3D to follow,
+Delay Frames Count is the number of physics ticks we are behind (uses physics ticks to get consistent delay)
+Camera offset if the camera's offset from the object
+Added camera_follow.cpp/.h to define the CameraFollow class
+Removed the static Camera3D from test.tscn and added CameraFollow
 
+KNOWN ISSUES:
+target.is_valid() is false in CameraFollow::_ready even though it shouldn't be, causing the script to warn about the delay_array not being populated.
+This should cause the camera to not be focused on target until delay_frames number of pysics ticks has elapsed, although this doesn't happen for unknown reasons.
+
+When moving player before staring the scene, the tractor beam becomes misaligned
+
+The tractor beam rendering cone has improper normals which causes lighting issues when rotating the player
