@@ -6,6 +6,7 @@
 #include "godot_cpp/classes/input.hpp"
 #include "godot_cpp/classes/rigid_body3d.hpp"
 #include "godot_cpp/core/gdvirtual.gen.inc"
+#include "godot_cpp/core/binder_common.hpp"
 
 using namespace godot;
 
@@ -25,7 +26,9 @@ public:
 	~PlayerMove() override = default;
 
 	void print_type(const Variant &p_variant) const;
+	GDVIRTUAL1(_process, double);
 	void _process(double delta);
+	GDVIRTUAL1(_physics_process, double);
 	void _physics_process(double delta);
 
 	float get_move_speed();

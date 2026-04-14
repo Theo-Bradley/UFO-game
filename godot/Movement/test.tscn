@@ -60,11 +60,11 @@ transform = Transform3D(1, 0, 0, 0, 0.44721356, 0.89442724, 0, -0.89442724, 0.44
 [node name="Player" type="Node3D" parent="." unique_id=1461747873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7636354, 0)
 
-[node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("Rigid Body")]
+[node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("RigidBody")]
 "Max Speed" = 10.0
 "Moving Acceleration" = 15.0
 "Turning Speed" = 18.912
-"Rigid Body" = NodePath("RigidBody3D")
+RigidBody = NodePath("RigidBody3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Player/PlayerMove" unique_id=1027398139]
 collision_layer = 2

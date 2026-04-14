@@ -18,7 +18,9 @@ void PlayerMove::_bind_methods()
 
 	ClassDB::bind_method(D_METHOD("get_rb"), &PlayerMove::get_rb);
 	ClassDB::bind_method(D_METHOD("set_rb", "ref"), &PlayerMove::set_rb);
-	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "Rigid Body", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rb", "get_rb");
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "RigidBody", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rb", "get_rb");
+	GDVIRTUAL_BIND(_process, "delta")
+	GDVIRTUAL_BIND(_physics_process, "delta");
 }
 
 void PlayerMove::_process(double delta)

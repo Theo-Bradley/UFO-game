@@ -11,7 +11,7 @@ void Tractable::_bind_methods()
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "RigidBody", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rigidbody", "get_rigidbody");
 
 	ClassDB::bind_method(D_METHOD("add_global_force", "global_position", "direction"), &Tractable::add_global_force);
-	ClassDB::bind_method(D_METHOD("add_local_force", "local_position"), &Tractable::add_local_force);
+	ClassDB::bind_method(D_METHOD("add_local_force", "local_position", "direction"), &Tractable::add_local_force);
 	ClassDB::bind_method(D_METHOD("collect"), &Tractable::collect);
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &Tractable::print_type);
 }

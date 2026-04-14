@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Tractable" inherits="Node3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Class for objects that can be attracted by the UFO.
+	</brief_description>
+	<description>
+		This Class should be the parent of the object's [RigidBody3D]. This will (once setup) will allow the object to be attracted by the UFO's tractor beam.
+		The [Rigidbody3D] should be on collision layer 3 (Tractables) to be hit by the tracotr beam, and layer 1 (All) if it should collide with other objects.
+		The Class requires a reference to the object's [RigidBody3D] and should be setup with a [param Points] to reward the player for sucessfully picking it up.
+	</description>
+	<members>
+		<member name="Points" type="" getter="" setter="">
+			The number of points to award the player when the item is successfully collected.
+		</member>
+		<member name="RigidBody" type="" getter="" setter="">
+			A reference to the [RigidBody3D] of the object. Stored internally as an ObjectID.
+		</member>
+	</members>
+	<methods>
+		<method name="collect" qualifiers="">
+			<return type="int">
+			<description>
+			Used when the object is collected. Deletes the object and returns the number of points to be collected.
+			</description>
+		</method>
+		<method name="add_global_force" qualifiers="">
+			<return type="void">
+			<description>
+			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]global_position[/code] representing the global position of the force and a [Vector3] [code]direction[/code] representing the direction of actio nof the force.
+			</description>
+		</method>
+		<method name="add_local_force" qualifiers="">
+			<return type="void">
+			<description>
+			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]local_position[/code] representing the local position of the force and a [Vector3] [code]direction[/code] representing the direction of actio nof the force.
+			</description>
+		</method>
+		<method name="print_type" qualifiers="const">
+			<return type="void" />
+			<param index="0" name="variant" type="Variant" />
+			<description>
+				Print the type of the variant.
+			</description>
+		</method>
+	</methods>
+</class>
