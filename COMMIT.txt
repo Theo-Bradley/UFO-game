@@ -1,2 +1,5 @@
-Added documentation
-Renamed PlayerMove property Rigid Body to RigidBody
+Fixed tractor beam being offset incorrectly with nonzero player starting position
+Fixed erroneous warning when initalizing CameraFollow by removing init_delay_array() call from set_delay_frames()
+Fixed tractor beam lighting by setting normals to (0, 1, 0)
+Added FollowCamera::tilt_offset to change the camera's look_at target
+Changed FollowCamera Camera Offset and Camera Tilt Offset to get a better view

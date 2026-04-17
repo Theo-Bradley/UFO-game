@@ -19,9 +19,11 @@ func _ready() -> void:
 		cone_points.append(Vector2(dist * cos(angle + increment / 2.0), dist * sin(angle + increment / 2.0)));
 	for i in range(numRays):
 		ImmediateGeo.surface_begin(Mesh.PRIMITIVE_TRIANGLES);
-		ImmediateGeo.surface_add_vertex(global_position);
-		ImmediateGeo.surface_add_vertex(global_position + Vector3(cone_points[2 * i].x, -ray_height, cone_points[2 * i].y));
-		ImmediateGeo.surface_add_vertex(global_position + Vector3(cone_points[2 * i + 1].x, -ray_height, cone_points[2 * i + 1].y));
+		var height_offset = Vector3(0.0, global_position.y, 0.0)
+		ImmediateGeo.surface_set_normal(Vector3(0, 1, 0));
+		ImmediateGeo.surface_add_vertex(height_offset);
+		ImmediateGeo.surface_add_vertex(height_offset + Vector3(cone_points[2 * i].x, -ray_height, cone_points[2 * i].y));
+		ImmediateGeo.surface_add_vertex(height_offset + Vector3(cone_points[2 * i + 1].x, -ray_height, cone_points[2 * i + 1].y));
 		ImmediateGeo.surface_end();
 	pass # Replace with function body.dx
 

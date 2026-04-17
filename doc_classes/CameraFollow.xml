@@ -14,6 +14,9 @@
 			<member name="Camera Offset" type="" getter="" setter="">
 				[Vector3] offset from [param Target] that the camera will maintain.
 			</member>
+			<member name="Camera Tilt Offset" type="" getter="" setter="">
+				[Vector3] offset applied to the camera's look_at to change the camera tilt angle.
+			</member>
 			<member name="Delay Frames Count" type="" getter="" setter="">
 				The number of physics steps behind the [param Target] that the camera will be. This cannot be changed at runtime without errors. This must be greater than zero to for changes to apply.
 			</member>

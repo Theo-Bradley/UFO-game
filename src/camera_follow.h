@@ -17,6 +17,7 @@ protected:
 	int array_index = 0;
 	void init_delay_array();
 	Vector3 offset;
+	Vector3 tilt_offset;
 
 public:
 	CameraFollow() = default;
@@ -30,5 +31,7 @@ public:
 	int get_delay_frames();
 	void set_offset(Vector3 val);
 	Vector3 get_offset();
+	void set_tilt_offset(Vector3 val);
+	Vector3 get_tilt_offset();
 	void print_type(const Variant &p_variant) const;
 };
