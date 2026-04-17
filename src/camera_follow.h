@@ -3,6 +3,7 @@
 #include "godot_cpp/classes/camera3d.hpp"
 #include "godot_cpp/classes/wrapped.hpp"
 #include "godot_cpp/variant/variant.hpp"
+#include "godot_cpp/classes/rigid_body3d.hpp"
 
 using namespace godot;
 
@@ -25,8 +26,8 @@ public:
 	void _ready();
 	void _physics_process(double delta);
 
-	void set_target(Node3D* ref);
-	Node3D* get_target();
+	void set_target(RigidBody3D* ref);
+	RigidBody3D* get_target();
 	void set_delay_frames(int val);
 	int get_delay_frames();
 	void set_offset(Vector3 val);

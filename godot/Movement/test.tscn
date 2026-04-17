@@ -31,7 +31,7 @@ albedo_color = Color(0, 0.8676743, 0, 0.29411766)
 disable_receive_shadows = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_660l1"]
-radius = 0.6
+radius = 0.8442608
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k1tsi"]
 size = Vector3(0.25, 0.25, 0.25)
@@ -53,7 +53,7 @@ visible = false
 shape = SubResource("BoxShape3D_7qhix")
 
 [node name="Player" type="Node3D" parent="." unique_id=1461747873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7636354, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2008033, 0)
 
 [node name="PlayerMove" type="PlayerMove" parent="Player" unique_id=1097423656 node_paths=PackedStringArray("RigidBody")]
 "Max Speed" = 10.0
@@ -86,7 +86,7 @@ numRays = 20
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
 [node name="TractorMesh" type="MeshInstance3D" parent="Player/PlayerMove/RigidBody3D/TractorOrigin" unique_id=1936393373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7636354, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1269455, 0)
 material_override = SubResource("StandardMaterial3D_7qhix")
 cast_shadow = 0
 mesh = SubResource("ImmediateMesh_3gamy")

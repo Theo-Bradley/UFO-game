@@ -11,5 +11,5 @@ protected:
     static void _bind_methods() {};
 
 public:
-    float tractor_beam_force = 0.2f;
+    float tractor_beam_force = 0.35f;
 };

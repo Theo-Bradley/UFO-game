@@ -29,8 +29,9 @@ void CameraFollow::_physics_process(double delta)
 	if (delay_array != nullptr && target.is_valid())
 	{
 		delay_array[(array_index + delay_frames - 1) % delay_frames] = get_target()->get_global_position();
-		set_global_position(delay_array[array_index] + offset);
-		look_at(delay_array[array_index] + tilt_offset);
+		float speed_zoom = Math::clamp(Math::pow(get_target()->get_linear_velocity().length(), 1.0f / 1.2f), 0.0f, 2.0f);
+		set_global_position(delay_array[array_index] + offset + (speed_zoom * (Vector3(0.0f, 0.0f, 1.0f))));
+		look_at(delay_array[array_index] + (tilt_offset - tilt_offset * (speed_zoom / 1.5f)));
 		array_index = ++array_index % delay_frames;
 	}
 }
@@ -62,14 +63,14 @@ void CameraFollow::init_delay_array()
 #endif
 }
 
-void CameraFollow::set_target(Node3D* ref)
+void CameraFollow::set_target(RigidBody3D* ref)
 {
 	target = ref != nullptr ? ref->get_instance_id() : ObjectID();
 }
 
-Node3D* CameraFollow::get_target()
+RigidBody3D* CameraFollow::get_target()
 {
-	return Object::cast_to<Node3D>(ObjectDB::get_instance(target));
+	return Object::cast_to<RigidBody3D>(ObjectDB::get_instance(target));
 }
 
 void CameraFollow::set_delay_frames(int val)
