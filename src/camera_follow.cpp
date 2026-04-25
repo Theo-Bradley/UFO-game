@@ -1,0 +1,117 @@
+#include "camera_follow.h"
+
+void CameraFollow::_bind_methods() {
+	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &CameraFollow::print_type);
+	ClassDB::bind_method(D_METHOD("get_target"), &CameraFollow::get_target);
+	ClassDB::bind_method(D_METHOD("set_target", "ref"), &CameraFollow::set_target);
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "Target", PROPERTY_HINT_NODE_TYPE, "Node3D"), "set_target", "get_target");
+
+	ClassDB::bind_method(D_METHOD("get_delay_frames"), &CameraFollow::get_delay_frames);
+	ClassDB::bind_method(D_METHOD("set_delay_frames", "val"), &CameraFollow::set_delay_frames);
+	ADD_PROPERTY(PropertyInfo(Variant::INT, "Delay Frames Count"), "set_delay_frames", "get_delay_frames");
+
+	ClassDB::bind_method(D_METHOD("get_offset"), &CameraFollow::get_offset);
+	ClassDB::bind_method(D_METHOD("set_offset", "val"), &CameraFollow::set_offset);
+	ADD_PROPERTY(PropertyInfo(Variant::VECTOR3, "Camera Offset"), "set_offset", "get_offset");
+
+	ClassDB::bind_method(D_METHOD("get_tilt_offset"), &CameraFollow::get_tilt_offset);
+	ClassDB::bind_method(D_METHOD("set_tilt_offset", "val"), &CameraFollow::set_tilt_offset);
+	ADD_PROPERTY(PropertyInfo(Variant::VECTOR3, "Camera Tilt Offset"), "set_tilt_offset", "get_tilt_offset");
+}
+
+void CameraFollow::_ready()
+{
+	init_delay_array();
+}
+
+void CameraFollow::_physics_process(double delta)
+{
+	if (delay_array != nullptr && target.is_valid())
+	{
+		delay_array[(array_index + delay_frames - 1) % delay_frames] = get_target()->get_global_position();
+		float speed_zoom = Math::clamp(Math::pow(get_target()->get_linear_velocity().length(), 1.0f / 1.2f), 0.0f, 2.0f);
+		set_global_position(delay_array[array_index] + offset + (speed_zoom * (Vector3(0.0f, 0.0f, 1.0f))));
+		look_at(delay_array[array_index] + (tilt_offset - tilt_offset * (speed_zoom / 1.5f)));
+		array_index = ++array_index % delay_frames;
+	}
+}
+
+void CameraFollow::init_delay_array()
+{
+	if (delay_array != nullptr)
+	{
+		memdelete(delay_array);
+		delay_array = nullptr;
+	}
+
+	delay_array = memnew_arr(Vector3, delay_frames);
+	array_index = 0;
+
+	if (target.is_valid())
+	{
+		Vector3 pos = get_target()->get_global_position();
+		for (int i = 0; i < delay_frames; i++)
+		{
+			delay_array[i] = pos;
+		}
+	}
+#ifdef _DEBUG
+	else
+	{
+		UtilityFunctions::push_warning("Follow Camera failed to populate delay_array! target.is_valid() == false");
+	}
+#endif
+}
+
+void CameraFollow::set_target(RigidBody3D* ref)
+{
+	target = ref != nullptr ? ref->get_instance_id() : ObjectID();
+}
+
+RigidBody3D* CameraFollow::get_target()
+{
+	return Object::cast_to<RigidBody3D>(ObjectDB::get_instance(target));
+}
+
+void CameraFollow::set_delay_frames(int val)
+{
+	if (delay_frames > 0)
+	{
+		delay_frames = val;
+	}
+#ifdef _DEBUG
+	else
+	{
+		UtilityFunctions::push_warning("Follow Camera failed to set delay_frames, value must be greater than zero! Did not init_delay_array()!");
+	}
+#endif
+}
+
+int CameraFollow::get_delay_frames()
+{
+	return delay_frames;
+}
+
+void CameraFollow::set_offset(Vector3 val)
+{
+	offset = val;
+}
+
+Vector3 CameraFollow::get_offset()
+{
+	return offset;
+}
+
+void CameraFollow::set_tilt_offset(Vector3 val)
+{
+	tilt_offset = val;
+}
+
+Vector3 CameraFollow::get_tilt_offset()
+{
+	return tilt_offset;
+}
+
+void CameraFollow::print_type(const Variant &p_variant) const {
+	print_line(vformat("Type: %d", p_variant.get_type()));
+}

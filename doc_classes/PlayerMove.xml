@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="PlayerMove" inherits="Node3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Player Movement class.
+	</brief_description>
+	<description>
+		This class checks input every render frame and applies forces to a child [RigidBody3D] stored in [param RigidBody] every physics step, turning the [RigidBody3D] to face the input direction.
+	</description>
+		<members>
+		<member name="RigidBody" type="" getter="" setter="">
+			A reference to the [RigidBody3D] we want to control. Stored internally as an ObjectID. Should be a child of this Node.
+		</member>
+		<member name="Max Speed" type="" getter="" setter="">
+			The maximum speed the [RigidBody3D] can move at. The body may never actually reach this speed due to friction and damping etc.
+		</member>
+		<member name="Moving Acceleration" type="" getter="" setter="">
+			The acceleration applied to the body when moving.
+		</member>
+		<member name="Turning Speed" type="" getter="" setter="">
+			The speed at which the [RigidBody3D] turns to face the movement direction in radians per second.
+		</member>
+	</members>
+	<methods>
+		<method name="_process" qualifiers="virtual">
+			<return type="void">
+			<description>
+				The Class checks input from various InputActions listed below, and sums their strength to get a [Vector2] of movement direcions with the [code]x[/code] and [code]y[/code] elements corresponding to the x and z axis respectively.
+				Left (X-)
+				Right (X+)
+				Forward (Z-)
+				Backward (Z+)
+			</description>
+		</method>
+				<method name="_physics_process" qualifiers="virtual">
+			<return type="void">
+			<description>
+				Once per physics step, the Class calculates the force applied to the body by [param Moving Acceleration] in each direction supplied by [method _process]. If this is greater than zero (i.e we are trying to move), the Class then rotates the body to face the movement direction supplied by [method _process] at a rate of [param Turning Speed] radians per second.
+			</description>
+		</method>
+		<method name="print_type" qualifiers="const">
+			<return type="void" />
+			<param index="0" name="variant" type="Variant" />
+			<description>
+				Print the type of the variant.
+			</description>
+		</method>
+	</methods>
+</class>

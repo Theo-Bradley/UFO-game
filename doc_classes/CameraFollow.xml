@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="CameraFollow" inherits="Camera3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		A basic delayed 3D follow camera.
+	</brief_description>
+	<description>
+		A follow camera that uses an array based fixed delay to add an easing effect to the following.
+		The camera follows [param Target] and is delayed by [param Delay Frames Count] number of physics steps. The camera is offset from the [param Target] by [param Offset], and uses [method Node3D::look_at] to remain pointed at [param Target].
+	</description>
+	<members>
+			<member name="Target" type="" getter="" setter="">
+				The [Node3D] that the camera should follow and focus on. Stored internally as ObjectID.
+			</member>
+			<member name="Camera Offset" type="" getter="" setter="">
+				[Vector3] offset from [param Target] that the camera will maintain.
+			</member>
+			<member name="Camera Tilt Offset" type="" getter="" setter="">
+				[Vector3] offset applied to the camera's look_at to change the camera tilt angle.
+			</member>
+			<member name="Delay Frames Count" type="" getter="" setter="">
+				The number of physics steps behind the [param Target] that the camera will be. This cannot be changed at runtime without errors. This must be greater than zero to for changes to apply.
+			</member>
+	</members>
+	<methods>
+		<method name="print_type" qualifiers="const">
+			<return type="void" />
+			<param index="0" name="variant" type="Variant" />
+			<description>
+				Print the type of the variant.
+			</description>
+		</method>
+	</methods>
+</class>

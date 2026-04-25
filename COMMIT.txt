@@ -1,0 +1,4 @@
+Added camera speed zooming
+Changed player height
+Changed Collection Area size
+Changed Globals::tractor_beam_force
