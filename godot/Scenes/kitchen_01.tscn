@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://b6jirnckvb7wf"]
+
+[ext_resource type="PackedScene" uid="uid://nlm8h2wk2qo1" path="res://Models/UFO/UFO.glb" id="1_dopyg"]
+[ext_resource type="PackedScene" uid="uid://ypadofknawm7" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink_large.gltf" id="2_k4xwx"]
+[ext_resource type="PackedScene" uid="uid://d36r0bqsoaoge" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink.gltf" id="3_ad6rl"]
+[ext_resource type="PackedScene" uid="uid://b1vb3wcxfp84y" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.gltf" id="4_1o1wr"]
+[ext_resource type="PackedScene" uid="uid://dojkd4soacju1" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate_small.gltf" id="5_ex7ff"]
+[ext_resource type="PackedScene" uid="uid://77brfogj2cx" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate.gltf" id="6_usrld"]
+[ext_resource type="PackedScene" uid="uid://cbct1atcfqjm" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate_dirty.gltf" id="7_k8ijh"]
+[ext_resource type="Material" uid="uid://nonytpm0m1rp" path="res://Shaders/water.tres" id="7_wpppf"]
+[ext_resource type="PackedScene" uid="uid://cb2n1vtmvi4ki" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_styleB_flat.gltf" id="9_skh0u"]
+[ext_resource type="PackedScene" uid="uid://c8y6pi6fxnf24" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/oven_on.gltf" id="10_g17hl"]
+[ext_resource type="PackedScene" uid="uid://cje6d6dh6ncis" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/oven.gltf" id="10_txjp7"]
+[ext_resource type="PackedScene" uid="uid://bjfes1qw8n8iw" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/stove_single_countertop.gltf" id="11_xnwpj"]
+[ext_resource type="PackedScene" uid="uid://gvv2v2rjn1wl" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_top_only_backsplash_styleB_flat.gltf" id="12_jghi2"]
+[ext_resource type="PackedScene" uid="uid://cw80xbaxs6odu" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_cab_only_styleB_flat.gltf" id="13_bngne"]
+[ext_resource type="PackedScene" uid="uid://bx2s4ujt8oekw" path="res://Models/Kitchen Props/knob.gltf" id="14_va151"]
+[ext_resource type="PackedScene" uid="uid://b3bq5n5ds6da6" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/pot_A.gltf" id="15_3ybn2"]
+[ext_resource type="PackedScene" uid="uid://dqodvk1joa00f" path="res://Models/Kitchen Props/chopping_board.gltf" id="15_n1tm3"]
+[ext_resource type="PackedScene" uid="uid://djt6prtnepm3l" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/bowl.gltf" id="17_nq0yy"]
+[ext_resource type="PackedScene" uid="uid://csu7sf6krscq4" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_tomato_slices.gltf" id="18_aduw0"]
+[ext_resource type="PackedScene" uid="uid://bfnvkwku1oo4k" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_tomato_flat.gltf" id="19_vra8p"]
+[ext_resource type="PackedScene" uid="uid://vkrkycdhw3eb" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_lettuce_slice.gltf" id="20_e37q2"]
+[ext_resource type="PackedScene" uid="uid://f630p2h8aorl" path="res://Models/Kitchen Props/knife.blend" id="20_gsglm"]
+[ext_resource type="PackedScene" uid="uid://mnjify2e6i1s" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_lettuce_flat.gltf" id="20_m7cyp"]
+[ext_resource type="PackedScene" uid="uid://by77vm5p4xv5r" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_mushroom.gltf" id="21_71fp2"]
+[ext_resource type="PackedScene" uid="uid://dxtbw0fffwd8b" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_onion_flat.gltf" id="22_n1tm3"]
+[ext_resource type="PackedScene" uid="uid://davql78vpgkob" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_potato_flat.gltf" id="23_nq0yy"]
+[ext_resource type="PackedScene" uid="uid://c5mxroxs5tevk" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_potato_chopped_flat.gltf" id="24_aduw0"]
+[ext_resource type="PackedScene" uid="uid://bf1hdxg1ptwuo" path="res://Models/Kitchen Props/food_ingredient_potato_gib_A_flat.gltf" id="26_78lw1"]
+[ext_resource type="PackedScene" uid="uid://ctmkoh4avdsri" path="res://Models/Kitchen Props/food_ingredient_potato_gib_B_flat.gltf" id="27_g17hl"]
+[ext_resource type="PackedScene" uid="uid://bgiwfcjp3vdrs" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/pan_A.gltf" id="28_m7cyp"]
+[ext_resource type="PackedScene" uid="uid://56252vy8rcqk" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_A.gltf" id="29_ehrt8"]
+[ext_resource type="PackedScene" uid="uid://bevxb7yynwn0v" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_B.gltf" id="30_xlfvc"]
+[ext_resource type="PackedScene" uid="uid://bglhjdgixuf18" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_C.gltf" id="31_q61oy"]
+[ext_resource type="PackedScene" uid="uid://bo4bigpwetqra" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_D.gltf" id="32_3q3ll"]
+[ext_resource type="PackedScene" uid="uid://cjqpmaavl72oh" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_E.gltf" id="33_iormp"]
+[ext_resource type="PackedScene" uid="uid://bh5cdym6gp7c2" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_F.gltf" id="34_el6v0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gs1nn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dopyg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mveov"]
+material = SubResource("StandardMaterial3D_dopyg")
+size = Vector2(90, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7v422"]
+size = Vector3(90, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5rpu8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uswt4"]
+material = ExtResource("7_wpppf")
+size = Vector2(10, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mveov"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q5v6y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n1tm3"]
+material = ExtResource("7_wpppf")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ehrt8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7v422"]
+
+[node name="Kitchen01" type="Node3D" unique_id=1286124264]
+
+[node name="UFO" parent="." unique_id=555372883 instance=ExtResource("1_dopyg")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 2.1853955, 0.29881135, 0.4549858)
+
+[node name="WhiteBox" type="Node3D" parent="." unique_id=899404319]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WhiteBox" unique_id=806823498]
+transform = Transform3D(0.25445557, 0.7174909, -0.6484283, 0.08225745, 0.6520109, 0.7537344, 0.96357983, -0.24512994, 0.10688881, -23.181, 5, 0)
+light_color = Color(1, 0.989, 0.89, 1)
+light_energy = 0.5
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_blend_splits = true
+
+[node name="Freezer" type="Node3D" parent="WhiteBox" unique_id=23207330]
+transform = Transform3D(25, 0, 0, 0, 15, 0, 0, 0, 20, -29.619678, 0, -15.067405)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Freezer" unique_id=1184573983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12363005, 0, 0)
+mesh = SubResource("BoxMesh_gs1nn")
+
+[node name="Floor" type="Node3D" parent="WhiteBox" unique_id=384122848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Floor" unique_id=630822971]
+mesh = SubResource("PlaneMesh_mveov")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WhiteBox/Floor" unique_id=1219673593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WhiteBox/Floor/StaticBody3D" unique_id=1243721528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7v422")
+
+[node name="WashPit" type="Node" parent="WhiteBox" unique_id=2146919078]
+
+[node name="kitchentable_sink_large2" parent="WhiteBox/WashPit" unique_id=1680331239 instance=ExtResource("2_k4xwx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -40.500523, -7.5, -2.0371327)
+
+[node name="kitchentable_sink2" parent="WhiteBox/WashPit" unique_id=1628310343 instance=ExtResource("3_ad6rl")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.00132, -7.5, -2.0371327)
+
+[node name="dishrack_flat" parent="WhiteBox/WashPit" unique_id=1104465742 instance=ExtResource("4_1o1wr")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -42.98181, -4.286156, -1.9983002)
+
+[node name="plate_small2" parent="WhiteBox/WashPit" unique_id=2124740406 instance=ExtResource("5_ex7ff")]
+transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -42.425026, -3.3639202, -2.1525328)
+
+[node name="plate_small3" parent="WhiteBox/WashPit" unique_id=1198315785 instance=ExtResource("5_ex7ff")]
+transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -42.425026, -3.3639202, -1.192528)
+
+[node name="plate_small4" parent="WhiteBox/WashPit" unique_id=1920946545 instance=ExtResource("5_ex7ff")]
+transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -43.54629, -3.3373766, -0.97177434)
+
+[node name="plate_small5" parent="WhiteBox/WashPit" unique_id=2097244687 instance=ExtResource("5_ex7ff")]
+transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -43.522194, -3.3373766, -1.8493283)
+
+[node name="plate2" parent="WhiteBox/WashPit" unique_id=952004961 instance=ExtResource("6_usrld")]
+transform = Transform3D(2, 0, 0, 0, 0.33758816, -1.8825878, 0, 0.9412939, 0.6751763, -42.754547, -3.0104473, -3.012842)
+
+[node name="bubbles" type="MeshInstance3D" parent="WhiteBox/WashPit" unique_id=1845997063]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -32.901863, -4.772033, -1.7486639)
+mesh = SubResource("BoxMesh_5rpu8")
+skeleton = NodePath("../water")
+
+[node name="water" type="MeshInstance3D" parent="WhiteBox/WashPit" unique_id=1442201597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.57452, -4.772033, -1.7486639)
+mesh = SubResource("PlaneMesh_uswt4")
+
+[node name="plate_dirty2" parent="WhiteBox/WashPit" unique_id=1844375627 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.489114, 0.12025813, 0, -0.1803872, 0.99274266, 0, 0, 0, 1.5, -34.067383, -4.80906, -1.5422467)
+
+[node name="plate_dirty3" parent="WhiteBox/WashPit" unique_id=1673851500 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.4810213, -0.1585716, 0, 0.23785749, 0.9873475, 0, 0, 0, 1.4999998, -33.257088, -5.01614, -1.5422467)
+
+[node name="plate_dirty4" parent="WhiteBox/WashPit" unique_id=1224463246 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.4810213, -0.1585716, 0, 0.23785749, 0.9873475, 0, 0, 0, 1.4999998, -32.072983, -5.01614, -1.5422467)
+
+[node name="WashPitShelf" type="Node3D" parent="WhiteBox" unique_id=194317267]
+transform = Transform3D(4.5, 0, 0, 0, 12.5, 0, 0, 0, 4.5, -24.456902, -1.1590319, -2.961966)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/WashPitShelf" unique_id=1619419307]
+mesh = SubResource("BoxMesh_mveov")
+
+[node name="Row" type="Node" parent="WhiteBox" unique_id=783434776]
+
+[node name="kitchencounter_straight_B_styleB_flat" parent="WhiteBox/Row" unique_id=930643138 instance=ExtResource("9_skh0u")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, 12.565128)
+
+[node name="kitchencounter_straight_B_styleB_flat2" parent="WhiteBox/Row" unique_id=1879000607 instance=ExtResource("9_skh0u")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, 4.565129)
+
+[node name="kitchencounter_straight_B_styleB_flat3" parent="WhiteBox/Row" unique_id=1901657503 instance=ExtResource("9_skh0u")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, -3.2348719)
+
+[node name="oven_on" parent="WhiteBox/Row" unique_id=82457579 instance=ExtResource("10_g17hl")]
+transform = Transform3D(-8.305164e-08, 0, -1.9, 0, 2, 0, 1.9, 0, -8.305164e-08, -1.2308879, -7.810862, -8.968312)
+
+[node name="oven3" parent="WhiteBox/Row" unique_id=2015603711 instance=ExtResource("10_txjp7")]
+transform = Transform3D(-8.305164e-08, 0, -1.9, 0, 2, 0, 1.9, 0, -8.305164e-08, -1.2308879, -7.810862, -12.608205)
+
+[node name="stove_single_countertop2" parent="WhiteBox/Row" unique_id=634229393 instance=ExtResource("11_xnwpj")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.556708e-08, -1.9752967, -4.416, -12.328673)
+
+[node name="stove_single_countertop3" parent="WhiteBox/Row" unique_id=1865409736 instance=ExtResource("11_xnwpj")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.556708e-08, -1.9752967, -4.416, -9.06007)
+
+[node name="stove_single_countertop4" parent="WhiteBox/Row" unique_id=459383642 instance=ExtResource("11_xnwpj")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.556708e-08, 1.1124666, -4.416, -12.328673)
+
+[node name="stove_single_countertop5" parent="WhiteBox/Row" unique_id=1449404831 instance=ExtResource("11_xnwpj")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.556708e-08, 1.1124666, -4.416, -9.06007)
+
+[node name="kitchencounter_straight_B_top_only_backsplash_styleB_flat" parent="WhiteBox/Row" unique_id=1764817730 instance=ExtResource("12_jghi2")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, -10.521786)
+
+[node name="kitchencounter_straight_B_cab_only_styleB_flat" parent="WhiteBox/Row" unique_id=994867077 instance=ExtResource("13_bngne")]
+transform = Transform3D(-1.7484555e-07, 0, -3, 0, 4, 0, 4, 0, -1.3113416e-07, 0.84108603, -7.468, -10.49735)
+
+[node name="knob" parent="WhiteBox/Row" unique_id=1934133071 instance=ExtResource("14_va151")]
+transform = Transform3D(-1.4469465, -1.3807048, 8.742278e-08, 6.3248045e-08, 6.035252e-08, 2, -1.3807048, 1.4469465, 4.4673348e-15, -3.611378, -3.3486733, -13.3259535)
+
+[node name="knob2" parent="WhiteBox/Row" unique_id=358503971 instance=ExtResource("14_va151")]
+transform = Transform3D(-8.742278e-08, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2, 8.742278e-08, 3.821371e-15, -3.611378, -3.3486733, -12.69398)
+
+[node name="knob3" parent="WhiteBox/Row" unique_id=963312559 instance=ExtResource("14_va151")]
+transform = Transform3D(-1.7302502, -1.0031123, 8.742279e-08, 7.563164e-08, 4.384744e-08, 2, -1.0031123, 1.7302502, 5.1887955e-15, -3.6112163, -3.349, -11.434871)
+
+[node name="knob4" parent="WhiteBox/Row" unique_id=268219067 instance=ExtResource("14_va151")]
+transform = Transform3D(-1.3440619, 1.4810463, 8.742278e-08, 5.8750803e-08, -6.473859e-08, 2, 1.4810463, 1.3440619, 2.8298136e-15, -3.6112163, -3.349, -12.034871)
+
+[node name="CounterBin" type="MeshInstance3D" parent="WhiteBox/Row" unique_id=132047434]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.10178375, -5.200088, 20.231468)
+mesh = SubResource("BoxMesh_q5v6y")
+
+[node name="chopping_board" type="Node" parent="WhiteBox/Row" unique_id=1312268530]
+
+[node name="chopping_board" parent="WhiteBox/Row/chopping_board" unique_id=563713626 instance=ExtResource("15_n1tm3")]
+transform = Transform3D(1.4933429, 0, -0.14116247, 0, 1, 0, 0.14116247, 0, 1.4933429, -1.857707, -3.4430082, 11.884534)
+
+[node name="food_ingredient_tomato_slices2" parent="WhiteBox/Row/chopping_board" unique_id=496971325 instance=ExtResource("18_aduw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2335217, -3.3590436, 11.049942)
+
+[node name="food_ingredient_tomato_flat" parent="WhiteBox/Row/chopping_board" unique_id=1190740196 instance=ExtResource("19_vra8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9525943, -3.3835037, 11.856058)
+
+[node name="food_ingredient_tomato_flat2" parent="WhiteBox/Row/chopping_board" unique_id=2090059854 instance=ExtResource("19_vra8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16772366, -3.3835037, 13.596997)
+
+[node name="knife2" parent="WhiteBox/Row/chopping_board" unique_id=286136228 instance=ExtResource("20_gsglm")]
+transform = Transform3D(-0.13413364, -0.08512871, 0.2892426, -2.489051e-08, -0.31657362, -0.09317267, 0.30150986, -0.03787151, 0.12867627, -2.2788053, -3.177968, 13.289596)
+
+[node name="food_ingredient_lettuce_flat" parent="WhiteBox/Row/chopping_board" unique_id=1229306335 instance=ExtResource("20_m7cyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0952482, -3.3943772, 15.061017)
+
+[node name="chopping_board2" type="Node" parent="WhiteBox/Row" unique_id=1367859047]
+
+[node name="chopping_board2" parent="WhiteBox/Row/chopping_board2" unique_id=1919799281 instance=ExtResource("15_n1tm3")]
+transform = Transform3D(1.4933429, 0, 0.14116246, 0, 1, 0, -0.14116246, 0, 1.4933429, -1.857707, -3.4430082, -1.8890333)
+
+[node name="Gibs" type="Node" parent="WhiteBox/Row/chopping_board2" unique_id=1605118691]
+
+[node name="food_ingredient_potato_gib_A_flat" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=1161632306 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.2997974, 0.011024508, 0, -0.011024508, 0.2997974, -2.3243172, -2.506598, -2.0908155)
+
+[node name="food_ingredient_potato_gib_A_flat3" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=256181287 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.1581624, -0.009367924, 0.2547487, 0, 0.2997974, 0.011024507, -0.2549209, -0.0058122072, 0.15805554, -2.4610786, -2.506598, -1.870388)
+
+[node name="food_ingredient_potato_gib_A_flat2" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=1739189915 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.11987435, 0, 0.27500933, 0, 0.29999998, 0, -0.27500933, 0, 0.11987435, -2.3243172, -2.506598, -1.725738)
+
+[node name="food_ingredient_potato_gib_B_flat" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=2116091932 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.2283547, -2.5383093, -1.948287)
+
+[node name="food_ingredient_potato_gib_B_flat2" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=1497108696 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.18959256, 0, -0.23249657, 0, 0.29999998, 0, 0.23249657, 0, 0.18959256, -2.6412494, -2.5383093, -1.9065123)
+
+[node name="food_ingredient_potato_gib_B_flat3" parent="WhiteBox/Row/chopping_board2/Gibs" unique_id=894701835 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.2893368, 0, 0.079273015, 0, 0.29999998, 0, -0.079273015, 0, 0.2893368, -2.542218, -2.5383093, -1.7101021)
+
+[node name="knife" parent="WhiteBox/Row/chopping_board2" unique_id=924666894 instance=ExtResource("20_gsglm")]
+transform = Transform3D(-0.32848075, 0, -0.031629127, 0, 0.33, 0, 0.031629127, 0, -0.32848075, -2.713459, -3.177968, -0.8624196)
+
+[node name="food_ingredient_potato_flat" parent="WhiteBox/Row/chopping_board2" unique_id=2106889642 instance=ExtResource("23_nq0yy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.6967771, -2.59513, -0.9206276)
+
+[node name="food_ingredient_potato_chopped_flat" parent="WhiteBox/Row/chopping_board2" unique_id=1494805667 instance=ExtResource("24_aduw0")]
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, -1.6965444, -3.3662815, -1.9837556)
+
+[node name="pot_A2" parent="WhiteBox/Row" unique_id=432045864 instance=ExtResource("15_3ybn2")]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -2.1465244, -3.158782, -9.106237)
+
+[node name="pot_A3" type="Node" parent="WhiteBox/Row" unique_id=1833174782]
+
+[node name="pot_A3" parent="WhiteBox/Row/pot_A3" unique_id=7054921 instance=ExtResource("15_3ybn2")]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 1.110426, -3.158782, -12.285702)
+
+[node name="pot_water" type="MeshInstance3D" parent="WhiteBox/Row/pot_A3/pot_A3" unique_id=1885725612]
+transform = Transform3D(0.9, 0, 0, 0, 0.10000001, 0, 0, 0, 0.9, -0.018776774, 0.3656146, 0.003218174)
+mesh = SubResource("SphereMesh_n1tm3")
+
+[node name="food_ingredient_potato_gib_A_flat4" parent="WhiteBox/Row/pot_A3" unique_id=1128689044 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.49966228, 0.01837418, 0, -0.01837418, 0.49966228, 1.1828821, -1.4871012, -12.779632)
+
+[node name="food_ingredient_potato_gib_A_flat5" parent="WhiteBox/Row/pot_A3" unique_id=1700845171 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.26360402, -0.015613206, 0.42458117, 0, 0.49966228, 0.018374179, -0.42486814, -0.009687015, 0.26342598, 1.1199468, -1.4871012, -12.402459)
+
+[node name="food_ingredient_potato_gib_A_flat6" parent="WhiteBox/Row/pot_A3" unique_id=723472743 instance=ExtResource("26_78lw1")]
+transform = Transform3D(0.1997906, 0, 0.4583489, 0, 0.5, 0, -0.4583489, 0, 0.1997906, 1.190459, -1.4871013, -11.979518)
+
+[node name="food_ingredient_potato_gib_B_flat4" parent="WhiteBox/Row/pot_A3" unique_id=1293774883 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.4728261, -1.5188125, -12.342502)
+
+[node name="food_ingredient_potato_gib_B_flat5" parent="WhiteBox/Row/pot_A3" unique_id=1086428960 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.31598762, 0, -0.3874943, 0, 0.5, 0, 0.3874943, 0, 0.31598762, 0.79623556, -1.5188125, -12.48632)
+
+[node name="food_ingredient_potato_gib_B_flat6" parent="WhiteBox/Row/pot_A3" unique_id=332101158 instance=ExtResource("27_g17hl")]
+transform = Transform3D(0.482228, 0, 0.1321217, 0, 0.5, 0, -0.1321217, 0, 0.482228, 0.8935565, -1.5188124, -12.123775)
+
+[node name="bowl2" parent="WhiteBox/Row" unique_id=606806022 instance=ExtResource("17_nq0yy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.142736, -3.3876886, 7.072931)
+
+[node name="bowl3" parent="WhiteBox/Row" unique_id=394349085 instance=ExtResource("17_nq0yy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.1386936, -3.3876886, 5.605349)
+
+[node name="food_ingredient_lettuce_slice2" parent="WhiteBox/Row" unique_id=42181199 instance=ExtResource("20_e37q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145444, -2.7388515, 6.9727945)
+
+[node name="food_ingredient_lettuce_slice3" parent="WhiteBox/Row" unique_id=1173268957 instance=ExtResource("20_e37q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145444, -2.220728, 6.9727945)
+
+[node name="food_ingredient_lettuce_slice4" parent="WhiteBox/Row" unique_id=752280558 instance=ExtResource("20_e37q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145444, -1.7846513, 6.9727945)
+
+[node name="food_ingredient_lettuce_slice5" parent="WhiteBox/Row" unique_id=1731678789 instance=ExtResource("20_e37q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145444, -1.4802179, 6.9727945)
+
+[node name="food_ingredient_mushroom2" parent="WhiteBox/Row" unique_id=1732705144 instance=ExtResource("21_71fp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5291238, -2.4517982, 0.6305561)
+
+[node name="food_ingredient_mushroom3" parent="WhiteBox/Row" unique_id=2111079343 instance=ExtResource("21_71fp2")]
+transform = Transform3D(-0.80901706, 0.5877852, 0, -0.5877852, -0.80901706, 0, 0, 0, 1, -1.0675635, -2.4517982, 0.6305561)
+
+[node name="food_ingredient_onion_flat" parent="WhiteBox/Row" unique_id=2036875918 instance=ExtResource("22_n1tm3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9555168, -3.5402308, 1.0749435)
+
+[node name="pan_A2" type="Node" parent="WhiteBox/Row" unique_id=1826251427]
+
+[node name="pan_A2" parent="WhiteBox/Row/pan_A2" unique_id=25280503 instance=ExtResource("28_m7cyp")]
+transform = Transform3D(0.0604593, 0, -1.4987808, 0, 1.5, 0, 1.4987808, 0, 0.0604593, -2.4521196, -2.9040785, -5.6087637)
+
+[node name="Gibs" type="Node" parent="WhiteBox/Row/pan_A2" unique_id=292793179]
+
+[node name="food_ingredient_mushroom_gib_A" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=1182175307 instance=ExtResource("29_ehrt8")]
+transform = Transform3D(1.5000001, 0, 0, 0, 1.5000002, 0, 0, 0, 1.5000001, -2.529669, -2.4416063, -5.9578433)
+
+[node name="food_ingredient_mushroom_gib_B" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=2022740190 instance=ExtResource("30_xlfvc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.448892, -2.0167441, -5.691915)
+
+[node name="food_ingredient_mushroom_gib_C" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=1808989708 instance=ExtResource("31_q61oy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.7587984, -2.1004677, -5.6537666)
+
+[node name="food_ingredient_mushroom_gib_D" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=368398278 instance=ExtResource("32_3q3ll")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.6446452, -1.5824089, -5.2972903)
+
+[node name="food_ingredient_mushroom_gib_E" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=282754022 instance=ExtResource("33_iormp")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.2087278, -1.8936763, -5.782193)
+
+[node name="food_ingredient_mushroom_gib_F" parent="WhiteBox/Row/pan_A2/Gibs" unique_id=1777153450 instance=ExtResource("34_el6v0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.2147615, -1.7491479, -5.3445554)
+
+[node name="flame" type="MeshInstance3D" parent="WhiteBox/Row" unique_id=1533505280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0914154, -3.0632286, -9.095135)
+mesh = SubResource("BoxMesh_ehrt8")
+
+[node name="flame2" type="MeshInstance3D" parent="WhiteBox/Row" unique_id=807413775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1019857, -3.0632286, -9.095135)
+mesh = SubResource("BoxMesh_ehrt8")
+
+[node name="flame3" type="MeshInstance3D" parent="WhiteBox/Row" unique_id=1954541034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1722624, -3.0632286, -12.207691)
+mesh = SubResource("BoxMesh_ehrt8")
+
+[node name="Row3" type="Node3D" parent="WhiteBox" unique_id=1877216636]
+transform = Transform3D(7.5, 0, 0, 0, 1, 0, 0, 0, 40, 32.126152, 0, 4.924445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Row3" unique_id=1268175924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32829666, 0, 0)
+mesh = SubResource("BoxMesh_7v422")
+
+[node name="Row2" type="Node3D" parent="WhiteBox" unique_id=679808916]
+transform = Transform3D(7.5, 0, 0, 0, 1, 0, 0, 0, 40, 16.88382, 0, -5.3934402)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Row2" unique_id=2104050212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37519574, 0, 0)
+mesh = SubResource("BoxMesh_7v422")

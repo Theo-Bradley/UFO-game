@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://crhf20rg77813"]
+
+[ext_resource type="PackedScene" uid="uid://nlm8h2wk2qo1" path="res://Models/UFO/UFO.glb" id="1_orgj1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gs1nn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dopyg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mveov"]
+material = SubResource("StandardMaterial3D_dopyg")
+size = Vector2(90, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7v422"]
+size = Vector3(90, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k4xwx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mveov"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7v422"]
+
+[node name="Kitchen01" type="Node3D" unique_id=1286124264]
+
+[node name="UFO" parent="." unique_id=555372883 instance=ExtResource("1_orgj1")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0.31304097, 0.29881135, 0.4549858)
+
+[node name="WhiteBox" type="Node3D" parent="." unique_id=899404319]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WhiteBox" unique_id=806823498]
+transform = Transform3D(0.25445557, 0.7174909, -0.6484283, 0.08225745, 0.6520109, 0.7537344, 0.96357983, -0.24512994, 0.10688881, -23.181, 5, 0)
+light_color = Color(1, 0.989, 0.89, 1)
+light_energy = 0.5
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_blend_splits = true
+
+[node name="Freezer" type="Node3D" parent="WhiteBox" unique_id=23207330]
+transform = Transform3D(25, 0, 0, 0, 15, 0, 0, 0, 20, -29.619678, 0, -15.067405)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Freezer" unique_id=1184573983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12363005, 0, 0)
+mesh = SubResource("BoxMesh_gs1nn")
+
+[node name="Floor" type="Node3D" parent="WhiteBox" unique_id=384122848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Floor" unique_id=630822971]
+mesh = SubResource("PlaneMesh_mveov")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WhiteBox/Floor" unique_id=1219673593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WhiteBox/Floor/StaticBody3D" unique_id=1243721528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7v422")
+
+[node name="WashPit" type="Node3D" parent="WhiteBox" unique_id=613477964]
+transform = Transform3D(17.5, 0, 0, 0, 1, 0, 0, 0, 5, -35.6724, 0, -2.5756266)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/WashPit" unique_id=1228788667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069611073, 0, -0.028618336)
+mesh = SubResource("BoxMesh_k4xwx")
+
+[node name="WashPitShelf" type="Node3D" parent="WhiteBox" unique_id=194317267]
+transform = Transform3D(4.5, 0, 0, 0, 12.5, 0, 0, 0, 4.5, -24.456902, -1.1590319, -2.961966)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/WashPitShelf" unique_id=1619419307]
+mesh = SubResource("BoxMesh_mveov")
+
+[node name="Row" type="Node3D" parent="WhiteBox" unique_id=709489162]
+transform = Transform3D(7.5, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 4.924445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Row" unique_id=1139852404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328296, 0, 0)
+mesh = SubResource("BoxMesh_7v422")
+
+[node name="Row3" type="Node3D" parent="WhiteBox" unique_id=1877216636]
+transform = Transform3D(7.5, 0, 0, 0, 1, 0, 0, 0, 40, 32.126152, 0, 4.924445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Row3" unique_id=1268175924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32829666, 0, 0)
+mesh = SubResource("BoxMesh_7v422")
+
+[node name="Row2" type="Node3D" parent="WhiteBox" unique_id=679808916]
+transform = Transform3D(7.5, 0, 0, 0, 1, 0, 0, 0, 40, 16.88382, 0, -5.3934402)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WhiteBox/Row2" unique_id=2104050212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37519574, 0, 0)
+mesh = SubResource("BoxMesh_7v422")

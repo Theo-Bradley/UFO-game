@@ -1,4 +1,2 @@
-Added camera speed zooming
-Changed player height
-Changed Collection Area size
-Changed Globals::tractor_beam_force
+Renamed city_01.tscn to kitchen_01.tscn
+Added whitebox blockout for kitchen scene
