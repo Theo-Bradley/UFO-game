@@ -1,2 +1,2 @@
-Renamed city_01.tscn to kitchen_01.tscn
-Added whitebox blockout for kitchen scene
+Fixed Some models depending on multiple versions of restaurantbits_extra.png, now all should point to correct version (inside the gltf folder)
+Removed restaurant bits/texutres folder which contained only a duplicate texture atlas

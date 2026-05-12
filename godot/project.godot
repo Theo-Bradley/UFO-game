@@ -19,6 +19,10 @@ run/main_scene="uid://ba37bbjx6a30k"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [input]
 
 Forward={

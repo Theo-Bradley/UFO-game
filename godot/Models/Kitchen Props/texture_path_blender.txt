@@ -1,1 +1,1 @@
-./../KayKit_Bits_Bundle1_1.1\Restaurant Bits\Assets\textures
+./../KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf

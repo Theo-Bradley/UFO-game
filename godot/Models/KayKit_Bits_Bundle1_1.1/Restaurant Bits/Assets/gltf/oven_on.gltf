@@ -82,7 +82,7 @@
 		{
 			"mimeType":"image/png",
 			"name":"restaurantbits_extra",
-			"uri":"../textures/restaurantbits_extra.png"
+			"uri":"restaurantbits_extra.png"
 		}
 	],
 	"accessors":[

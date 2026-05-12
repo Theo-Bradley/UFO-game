@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"food_ingredient_mushroom_pieces"
+			"name":"icecream_cherry"
 		}
 	],
 	"materials":[
@@ -32,7 +32,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.337",
+			"name":"Sphere.162",
 			"primitives":[
 				{
 					"attributes":{
@@ -56,68 +56,68 @@
 		{
 			"mimeType":"image/png",
 			"name":"restaurantbits_extra",
-			"uri":"../KayKit_Bits_Bundle1_1.1/Restaurant%20Bits/Assets/textures/restaurantbits_extra.png"
+			"uri":"./restaurantbits_extra.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":69,
+			"count":338,
 			"max":[
-				0.0783337652683258,
-				0.021204113960266113,
-				0.07324138283729553
+				0.12217381596565247,
+				0.2418099045753479,
+				0.12217381596565247
 			],
 			"min":[
-				-0.05983647704124451,
-				-0.023830443620681763,
-				-0.07984787225723267
+				-0.12217381596565247,
+				0.002558615757152438,
+				-0.12217380106449127
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":69,
+			"count":338,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":69,
+			"count":338,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":177,
+			"count":420,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":828,
+			"byteLength":4056,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":828,
-			"byteOffset":828,
+			"byteLength":4056,
+			"byteOffset":4056,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":552,
-			"byteOffset":1656,
+			"byteLength":2704,
+			"byteOffset":8112,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":354,
-			"byteOffset":2208,
+			"byteLength":840,
+			"byteOffset":10816,
 			"target":34963
 		}
 	],
@@ -129,8 +129,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":2564,
-			"uri":"food_ingredient_mushroom_gib_B.bin"
+			"byteLength":11656,
+			"uri":"icecream_cherry_flat.bin"
 		}
 	]
 }

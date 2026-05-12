@@ -26,7 +26,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material.001",
+			"name":"Material",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -62,7 +62,7 @@
 		{
 			"mimeType":"image/png",
 			"name":"restaurantbits_extra",
-			"uri":"../KayKit_Bits_Bundle1_1.1/Restaurant%20Bits/Assets/textures/restaurantbits_extra.png"
+			"uri":"../KayKit_Bits_Bundle1_1.1/Restaurant%20Bits/Assets/gltf/restaurantbits_extra.png"
 		}
 	],
 	"accessors":[

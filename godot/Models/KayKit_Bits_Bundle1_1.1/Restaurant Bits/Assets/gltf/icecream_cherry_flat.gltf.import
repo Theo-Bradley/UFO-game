@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://be3pabscy65sx"
-path="res://.godot/imported/dishrack_flat.glb-79b995898dcad325808d4575c7682e12.scn"
+uid="uid://cvytl37iakgx6"
+path="res://.godot/imported/icecream_cherry_flat.gltf-9d1f7a647635dae3aafb4e9b4c772e25.scn"
 
 [deps]
 
-source_file="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.glb"
-dest_files=["res://.godot/imported/dishrack_flat.glb-79b995898dcad325808d4575c7682e12.scn"]
+source_file="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/icecream_cherry_flat.gltf"
+dest_files=["res://.godot/imported/icecream_cherry_flat.gltf-9d1f7a647635dae3aafb4e9b4c772e25.scn"]
 
 [params]
 

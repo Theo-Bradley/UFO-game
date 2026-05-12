@@ -38,7 +38,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.001",
+			"name":"Mesh",
 			"primitives":[
 				{
 					"attributes":{
@@ -62,22 +62,22 @@
 		{
 			"mimeType":"image/png",
 			"name":"restaurantbits_extra",
-			"uri":"../KayKit_Bits_Bundle1_1.1/Restaurant%20Bits/Assets/textures/restaurantbits_extra.png"
+			"uri":"../KayKit_Bits_Bundle1_1.1/Restaurant%20Bits/Assets/gltf/restaurantbits_extra.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":80,
+			"count":594,
 			"max":[
 				1,
-				1,
+				1.0000001192092896,
 				1
 			],
 			"min":[
 				-1,
-				-1,
+				-1.0000001192092896,
 				-1
 			],
 			"type":"VEC3"
@@ -85,45 +85,45 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":80,
+			"count":594,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":80,
+			"count":594,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":252,
+			"count":1008,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":960,
+			"byteLength":7128,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":960,
-			"byteOffset":960,
+			"byteLength":7128,
+			"byteOffset":7128,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":640,
-			"byteOffset":1920,
+			"byteLength":4752,
+			"byteOffset":14256,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":504,
-			"byteOffset":2560,
+			"byteLength":2016,
+			"byteOffset":19008,
 			"target":34963
 		}
 	],
@@ -135,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":3064,
+			"byteLength":21024,
 			"uri":"chopping_board.bin"
 		}
 	]

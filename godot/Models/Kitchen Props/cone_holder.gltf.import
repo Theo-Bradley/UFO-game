@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bevxb7yynwn0v"
-path="res://.godot/imported/food_ingredient_mushroom_gib_B.gltf-4a85fc06b7868e290362f4fd49e15fce.scn"
+uid="uid://dc3or56cacy2u"
+path="res://.godot/imported/cone_holder.gltf-4787d97e6529b784ae7fa899320e30d9.scn"
 
 [deps]
 
-source_file="res://Models/Kitchen Props/food_ingredient_mushroom_gib_B.gltf"
-dest_files=["res://.godot/imported/food_ingredient_mushroom_gib_B.gltf-4a85fc06b7868e290362f4fd49e15fce.scn"]
+source_file="res://Models/Kitchen Props/cone_holder.gltf"
+dest_files=["res://.godot/imported/cone_holder.gltf-4787d97e6529b784ae7fa899320e30d9.scn"]
 
 [params]
 
