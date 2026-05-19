@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://004vfste0a71" path="res://Shaders/distance_fade.gd" id="2_w570l"]
 [ext_resource type="PackedScene" uid="uid://d2txx4irnrtee" path="res://Models/Kitchen Props/cheese_pile.gltf" id="3_w570l"]
 
-[node name="cheese_pile" unique_id=212126061 instance=ExtResource("1_rfjqk")]
+[node name="cheese_pile" unique_id=1229621196 instance=ExtResource("1_rfjqk")]
 
-[node name="NurbsPath" parent="." index="0" unique_id=568145109]
+[node name="NurbsPath" parent="." index="0" unique_id=502084779]
 visible = false
 
-[node name="Cone" parent="." index="1" unique_id=25838576]
+[node name="Cone" parent="." index="1" unique_id=1280653919]
 script = ExtResource("2_w570l")
 
-[node name="cheese_pile" parent="." index="2" unique_id=981469140 instance=ExtResource("3_w570l")]
+[node name="cheese_pile" parent="." index="2" unique_id=1160453573 instance=ExtResource("3_w570l")]
