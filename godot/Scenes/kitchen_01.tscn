@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ypadofknawm7" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink_large.gltf" id="2_k4xwx"]
 [ext_resource type="PackedScene" uid="uid://d36r0bqsoaoge" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink.gltf" id="3_ad6rl"]
 [ext_resource type="PackedScene" uid="uid://b1vb3wcxfp84y" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.gltf" id="4_1o1wr"]
-[ext_resource type="PackedScene" uid="uid://dojkd4soacju1" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate_small.gltf" id="5_ex7ff"]
 [ext_resource type="PackedScene" uid="uid://77brfogj2cx" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate.gltf" id="6_usrld"]
 [ext_resource type="PackedScene" uid="uid://cbct1atcfqjm" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate_dirty.gltf" id="7_k8ijh"]
 [ext_resource type="Material" uid="uid://nonytpm0m1rp" path="res://Shaders/water.tres" id="7_wpppf"]
@@ -78,6 +77,38 @@ size = Vector2(90, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7v422"]
 size = Vector3(90, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bidqp"]
+size = Vector3(4.971504, 4.760254, 5.990814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5i8ly"]
+size = Vector3(2.0094495, 4.760254, 5.990814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fq2e"]
+size = Vector3(14.966168, 4.760254, 1.5350571)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6rjq"]
+size = Vector3(14.966168, 4.760254, 2.1083488)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idc83"]
+size = Vector3(14.966168, 3.8400269, 3.0322142)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aqpcd"]
+size = Vector3(3.5881348, 0.38327026, 4.2070923)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kldxb"]
+size = Vector3(3.2429504, 1.534729, 0.52371216)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0fq2e"]
+height = 2.1591797
+radius = 0.14648438
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24l1t"]
+size = Vector3(1.621521, 0.07519531, 0.36901855)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mvfs8"]
+height = 0.14703369
+radius = 0.71728516
 
 [sub_resource type="BoxMesh" id="BoxMesh_5rpu8"]
 
@@ -319,10 +350,6 @@ radius = 0.3491211
 height = 0.20898438
 radius = 0.35058594
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mvfs8"]
-height = 0.14703369
-radius = 0.71728516
-
 [node name="Kitchen01" type="Node3D" unique_id=1286124264]
 
 [node name="UFO" parent="." unique_id=555372883 instance=ExtResource("1_dopyg")]
@@ -359,47 +386,206 @@ shape = SubResource("BoxShape3D_7v422")
 
 [node name="WashPit" type="Node" parent="Level" unique_id=2146919078]
 
-[node name="kitchentable_sink_large2" parent="Level/WashPit" unique_id=1680331239 instance=ExtResource("2_k4xwx")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -40.500523, -7.5, -2.0371327)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/WashPit" unique_id=1605877471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.500523, -7.5, -2.0371327)
 
-[node name="kitchentable_sink2" parent="Level/WashPit" unique_id=1628310343 instance=ExtResource("3_ad6rl")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.00132, -7.5, -2.0371327)
+[node name="kitchentable_sink_large2" parent="Level/WashPit/StaticBody3D" unique_id=1680331239 instance=ExtResource("2_k4xwx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="dishrack_flat" parent="Level/WashPit" unique_id=1104465742 instance=ExtResource("4_1o1wr")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -42.98181, -4.286156, -1.9983002)
+[node name="kitchentable_sink2" parent="Level/WashPit/StaticBody3D" unique_id=1628310343 instance=ExtResource("3_ad6rl")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.4992027, 0, 0)
 
-[node name="plate_small2" parent="Level/WashPit" unique_id=2124740406 instance=ExtResource("5_ex7ff")]
-transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -42.425026, -3.3639202, -2.1525328)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=61792544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0046654, 0.64640903, 0.015365601)
+shape = SubResource("BoxShape3D_bidqp")
 
-[node name="plate_small3" parent="Level/WashPit" unique_id=1198315785 instance=ExtResource("5_ex7ff")]
-transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -42.425026, -3.3639202, -1.192528)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=1681834356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4147835, 0.64640903, 0.015365601)
+shape = SubResource("BoxShape3D_5i8ly")
 
-[node name="plate_small4" parent="Level/WashPit" unique_id=1920946545 instance=ExtResource("5_ex7ff")]
-transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -43.54629, -3.3373766, -0.97177434)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=747742592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9867172, 0.64640903, 2.2432442)
+shape = SubResource("BoxShape3D_0fq2e")
 
-[node name="plate_small5" parent="Level/WashPit" unique_id=2097244687 instance=ExtResource("5_ex7ff")]
-transform = Transform3D(1.99998, 0.0044261888, 0.0012731599, -0.00087609014, 0.238628, -1.9422219, -0.00890045, 0.971101, 0.47725514, -43.522194, -3.3373766, -1.8493283)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=1268512726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9867172, 0.64640903, -1.9518037)
+shape = SubResource("BoxShape3D_b6rjq")
 
-[node name="plate2" parent="Level/WashPit" unique_id=952004961 instance=ExtResource("6_usrld")]
-transform = Transform3D(2, 0, 0, 0, 0.33758816, -1.8825878, 0, 0.9412939, 0.6751763, -42.754547, -3.0104473, -3.012842)
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=1437823167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9867172, 0.18629551, 0.28160095)
+shape = SubResource("BoxShape3D_idc83")
 
-[node name="bubbles" type="MeshInstance3D" parent="Level/WashPit" unique_id=1845997063]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/WashPit/StaticBody3D" unique_id=1707618711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2554245, 3.074892, 0.004740715)
+shape = SubResource("BoxShape3D_aqpcd")
+
+[node name="Dishrack" type="Node" parent="Level/WashPit" unique_id=422042817]
+
+[node name="Dishrack" type="Tractable" parent="Level/WashPit/Dishrack" unique_id=1313366555 node_paths=PackedStringArray("RigidBody")]
+Points = 5
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.98181, -4.286156, -1.9983002)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Dishrack/Dishrack" unique_id=757359376]
+
+[node name="dishrack_flat" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1104465742 instance=ExtResource("4_1o1wr")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=2076954862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006668091, 0.83377075, 1.3619225)
+shape = SubResource("BoxShape3D_kldxb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1188275144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006668091, 0.83377075, -1.354568)
+shape = SubResource("BoxShape3D_kldxb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=635250208]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.3550186, 1.35146, -0.0024412852)
+shape = SubResource("CylinderShape3D_0fq2e")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1557197241]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3783646, 1.35146, -0.0024412852)
+shape = SubResource("CylinderShape3D_0fq2e")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=29543380]
+transform = Transform3D(0.74816877, -0.6635085, 0, 0.6635085, 0.74816877, 0, 0, 0, 1, 0.68082905, 0.87157696, 0.5048406)
+shape = SubResource("BoxShape3D_24l1t")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1097630595]
+transform = Transform3D(0.74816877, -0.6635085, 0, 0.6635085, 0.74816877, 0, 0, 0, 1, 0.68082905, 0.87157696, -0.5107312)
+shape = SubResource("BoxShape3D_24l1t")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1776950418]
+transform = Transform3D(0.7630745, 0.6463105, 0, -0.6463105, 0.7630745, 0, 0, 0, 1, -0.70274734, 0.89533377, -0.5107311)
+shape = SubResource("BoxShape3D_24l1t")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Dishrack/RigidBody3D" unique_id=1555697673]
+transform = Transform3D(0.7630745, 0.6463105, 0, -0.6463105, 0.7630745, 0, 0, 0, 1, -0.70274734, 0.89533377, 0.5090147)
+shape = SubResource("BoxShape3D_24l1t")
+
+[node name="Plate" type="Tractable" parent="Level/WashPit/Dishrack" unique_id=583159618 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.99999, 0.0044261916, 0.0006365625, -0.00043804524, 0.23862807, -0.97111094, -0.004450225, 0.971101, 0.23862763, -42.4856, -3.0033944, -2.1770244)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Dishrack/Plate" unique_id=1905274594]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate2" parent="Level/WashPit/Dishrack/Plate/RigidBody3D" unique_id=952004961 instance=ExtResource("6_usrld")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Plate/RigidBody3D" unique_id=839172954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Plate2" type="Tractable" parent="Level/WashPit/Dishrack" unique_id=1079079642 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.9992946, 0.036569975, 0.008535467, -0.00043804542, 0.23862807, -0.97111094, -0.0375503, 0.97042227, 0.23847577, -43.522194, -2.6232557, -1.9916937)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Dishrack/Plate2" unique_id=1771442827]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate2" parent="Level/WashPit/Dishrack/Plate2/RigidBody3D" unique_id=1725454981 instance=ExtResource("6_usrld")]
+transform = Transform3D(1.5, 1.3969839e-09, -1.1641532e-10, -1.3969839e-09, 1, 5.9604645e-08, 0, 0, 1.5000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Plate2/RigidBody3D" unique_id=747881523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Plate3" type="Tractable" parent="Level/WashPit/Dishrack" unique_id=949087571 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.99999, 0.0044261916, 0.0006365625, -0.00043804524, 0.23862807, -0.97111094, -0.004450225, 0.971101, 0.23862763, -42.754547, -2.761114, -2.965194)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Dishrack/Plate3" unique_id=691920358]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate2" parent="Level/WashPit/Dishrack/Plate3/RigidBody3D" unique_id=1802729029 instance=ExtResource("6_usrld")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Plate3/RigidBody3D" unique_id=672689178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Plate4" type="Tractable" parent="Level/WashPit/Dishrack" unique_id=1545234482 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.99999, 0.0044261916, 0.0006365625, -0.00043804524, 0.23862807, -0.97111094, -0.004450225, 0.971101, 0.23862763, -42.464195, -3.1365104, -1.1725733)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Dishrack/Plate4" unique_id=975257454]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate2" parent="Level/WashPit/Dishrack/Plate4/RigidBody3D" unique_id=512254809 instance=ExtResource("6_usrld")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Dishrack/Plate4/RigidBody3D" unique_id=1201103407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Sink" type="Node" parent="Level/WashPit" unique_id=474558914]
+
+[node name="bubbles" type="MeshInstance3D" parent="Level/WashPit/Sink" unique_id=1845997063]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -32.901863, -4.772033, -1.7486639)
 mesh = SubResource("BoxMesh_5rpu8")
 skeleton = NodePath("../water")
 
-[node name="water" type="MeshInstance3D" parent="Level/WashPit" unique_id=1442201597]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.57452, -4.772033, -1.7486639)
+[node name="water" type="MeshInstance3D" parent="Level/WashPit/Sink" unique_id=1442201597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.574596, -4.77653, -1.7425427)
 mesh = SubResource("PlaneMesh_uswt4")
+skeleton = NodePath("../..")
 
-[node name="plate_dirty2" parent="Level/WashPit" unique_id=1844375627 instance=ExtResource("7_k8ijh")]
-transform = Transform3D(1.489114, 0.12025813, 0, -0.1803872, 0.99274266, 0, 0, 0, 1.5, -34.067383, -4.80906, -1.5422467)
+[node name="Plate" type="Tractable" parent="Level/WashPit/Sink" unique_id=390946416 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -34.067383, -4.80906, -1.5422467)
 
-[node name="plate_dirty3" parent="Level/WashPit" unique_id=1673851500 instance=ExtResource("7_k8ijh")]
-transform = Transform3D(1.4810213, -0.1585716, 0, 0.23785749, 0.9873475, 0, 0, 0, 1.4999998, -33.257088, -5.01614, -1.5422467)
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Sink/Plate" unique_id=935634546]
+collision_layer = 5
+mass = 0.4
 
-[node name="plate_dirty4" parent="Level/WashPit" unique_id=1224463246 instance=ExtResource("7_k8ijh")]
-transform = Transform3D(1.4810213, -0.1585716, 0, 0.23785749, 0.9873475, 0, 0, 0, 1.4999998, -32.072983, -5.01614, -1.5422467)
+[node name="plate_dirty2" parent="Level/WashPit/Sink/Plate/RigidBody3D" unique_id=1844375627 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.4894485, 0.11840397, 0, -0.17760599, 0.9929655, 0, 0, 0, 1.5000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Sink/Plate/RigidBody3D" unique_id=537449346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Plate2" type="Tractable" parent="Level/WashPit/Sink" unique_id=1222719415 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.9873474, -0.15857165, 0, 0.15857163, 0.9873475, 0, 0, 0, 1, -33.257088, -5.01614, -1.5422467)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Sink/Plate2" unique_id=546924459]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate_dirty2" parent="Level/WashPit/Sink/Plate2/RigidBody3D" unique_id=1060689720 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.4894485, 0.11840397, 0, -0.17760599, 0.9929655, 0, 0, 0, 1.5000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Sink/Plate2/RigidBody3D" unique_id=996379278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
+
+[node name="Plate3" type="Tractable" parent="Level/WashPit/Sink" unique_id=278011963 node_paths=PackedStringArray("RigidBody")]
+Points = 2
+RigidBody = NodePath("RigidBody3D")
+transform = Transform3D(0.9873474, -0.15857165, 0, 0.15857163, 0.9873475, 0, 0, 0, 1, -32.072983, -5.01614, -1.5422467)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/WashPit/Sink/Plate3" unique_id=1499325219]
+collision_layer = 5
+mass = 0.4
+
+[node name="plate_dirty2" parent="Level/WashPit/Sink/Plate3/RigidBody3D" unique_id=589419036 instance=ExtResource("7_k8ijh")]
+transform = Transform3D(1.4894485, 0.11840397, 0, -0.17760599, 0.9929655, 0, 0, 0, 1.5000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/WashPit/Sink/Plate3/RigidBody3D" unique_id=358285984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
+shape = SubResource("CylinderShape3D_mvfs8")
 
 [node name="WashPitShelf" type="Node3D" parent="Level" unique_id=194317267]
 transform = Transform3D(4.5, 0, 0, 0, 12.5, 0, 0, 0, 4.5, -24.456902, -1.1590319, -2.961966)
@@ -1900,587 +2086,587 @@ shape = SubResource("ConvexPolygonShape3D_kaxb6")
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 2.7845352, -1.4901161e-08, -0.79473084)
 shape = SubResource("CylinderShape3D_3lh5p")
 
-[node name="Row3" type="Node" parent="." unique_id=1268472998]
+[node name="Row3" type="Node" parent="Level" unique_id=1268472998]
 
-[node name="Fridge" type="StaticBody3D" parent="Row3" unique_id=154553714]
+[node name="Fridge" type="StaticBody3D" parent="Level/Row3" unique_id=154553714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.76479, -7.5, 22.426537)
 
-[node name="fridge_B2" parent="Row3/Fridge" unique_id=447221092 instance=ExtResource("51_yyb00")]
+[node name="fridge_B2" parent="Level/Row3/Fridge" unique_id=447221092 instance=ExtResource("51_yyb00")]
 transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Fridge" unique_id=877023068]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Fridge" unique_id=877023068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057556152, 2.2407837, -0.0063934326)
 shape = SubResource("BoxShape3D_igjnf")
 
-[node name="Flake_Bowl" type="Tractable" parent="Row3" unique_id=276801550 node_paths=PackedStringArray("RigidBody")]
+[node name="Flake_Bowl" type="Tractable" parent="Level/Row3" unique_id=276801550 node_paths=PackedStringArray("RigidBody")]
 Points = 5
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.293797, -2.7929163, 10.099023)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Flake_Bowl" unique_id=1022766068]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Flake_Bowl" unique_id=1022766068]
 collision_layer = 5
 mass = 0.65
 
-[node name="icecream_bowl_cookiesticks2" parent="Row3/Flake_Bowl/RigidBody3D" unique_id=386536499 instance=ExtResource("51_en2em")]
+[node name="icecream_bowl_cookiesticks2" parent="Level/Row3/Flake_Bowl/RigidBody3D" unique_id=386536499 instance=ExtResource("51_en2em")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Flake_Bowl/RigidBody3D" unique_id=1565121765]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Flake_Bowl/RigidBody3D" unique_id=1565121765]
 shape = SubResource("ConvexPolygonShape3D_8acsq")
 
-[node name="Counters" type="Node" parent="Row3" unique_id=286882544]
+[node name="Counters" type="Node" parent="Level/Row3" unique_id=286882544]
 
-[node name="kitchencounter_straight_B_styleB_flat4" parent="Row3/Counters" unique_id=1590277948 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat4" parent="Level/Row3/Counters" unique_id=1590277948 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 33.604145, -7.46, 15.9632015)
 
-[node name="kitchencounter_straight_B_styleB_flat5" parent="Row3/Counters" unique_id=602693271 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat5" parent="Level/Row3/Counters" unique_id=602693271 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 33.604, -7.46, 8.01)
 
-[node name="Counter" type="StaticBody3D" parent="Row3/Counters" unique_id=1589252593]
+[node name="Counter" type="StaticBody3D" parent="Level/Row3/Counters" unique_id=1589252593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.604, -7.46, -19.858517)
 
-[node name="kitchencounter_straight_B_styleB_flat6" parent="Row3/Counters/Counter" unique_id=140164979 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat6" parent="Level/Row3/Counters/Counter" unique_id=140164979 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Counters/Counter" unique_id=2101120918]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Counters/Counter" unique_id=2101120918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16386414, 1.9978027, 0.005554199)
 shape = SubResource("BoxShape3D_4durq")
 
-[node name="Counter2" type="StaticBody3D" parent="Row3/Counters" unique_id=89055186]
+[node name="Counter2" type="StaticBody3D" parent="Level/Row3/Counters" unique_id=89055186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.324207, -3.9194767, 16.540745)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Counters/Counter2" unique_id=1455065245]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Counters/Counter2" unique_id=1455065245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3319702, -1.5743663, -4.57294)
 shape = SubResource("BoxShape3D_8acsq")
 
-[node name="Decorated_Bowl" type="Tractable" parent="Row3" unique_id=310395909 node_paths=PackedStringArray("RigidBody")]
+[node name="Decorated_Bowl" type="Tractable" parent="Level/Row3" unique_id=310395909 node_paths=PackedStringArray("RigidBody")]
 Points = 7
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.759773, -3.2922761, 6.565571)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Decorated_Bowl" unique_id=893706760]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Decorated_Bowl" unique_id=893706760]
 collision_layer = 5
 mass = 0.8
 
-[node name="icecream_bowl_decorated_B2" parent="Row3/Decorated_Bowl/RigidBody3D" unique_id=632850990 instance=ExtResource("53_vc8om")]
+[node name="icecream_bowl_decorated_B2" parent="Level/Row3/Decorated_Bowl/RigidBody3D" unique_id=632850990 instance=ExtResource("53_vc8om")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Decorated_Bowl/RigidBody3D" unique_id=225326831]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Decorated_Bowl/RigidBody3D" unique_id=225326831]
 shape = SubResource("ConvexPolygonShape3D_8acsq")
 
-[node name="Decorated_Bowl2" type="Tractable" parent="Row3" unique_id=100663875 node_paths=PackedStringArray("RigidBody")]
+[node name="Decorated_Bowl2" type="Tractable" parent="Level/Row3" unique_id=100663875 node_paths=PackedStringArray("RigidBody")]
 Points = 7
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.025906, -3.2767074, 6.0625815)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Decorated_Bowl2" unique_id=896166546]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Decorated_Bowl2" unique_id=896166546]
 collision_layer = 5
 mass = 0.8
 
-[node name="icecream_bowl_decorated_A2" parent="Row3/Decorated_Bowl2/RigidBody3D" unique_id=885586276 instance=ExtResource("52_wk0dn")]
+[node name="icecream_bowl_decorated_A2" parent="Level/Row3/Decorated_Bowl2/RigidBody3D" unique_id=885586276 instance=ExtResource("52_wk0dn")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Decorated_Bowl2/RigidBody3D" unique_id=955672270]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Decorated_Bowl2/RigidBody3D" unique_id=955672270]
 shape = SubResource("ConvexPolygonShape3D_8acsq")
 
-[node name="Cone" type="Tractable" parent="Row3" unique_id=886060587 node_paths=PackedStringArray("RigidBody")]
+[node name="Cone" type="Tractable" parent="Level/Row3" unique_id=886060587 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.756294, -2.3058863, 12.442007)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cone" unique_id=369702144]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cone" unique_id=369702144]
 collision_layer = 5
 mass = 0.003
 
-[node name="icecream_cone4" parent="Row3/Cone/RigidBody3D" unique_id=890288420 instance=ExtResource("59_clh5k")]
+[node name="icecream_cone4" parent="Level/Row3/Cone/RigidBody3D" unique_id=890288420 instance=ExtResource("59_clh5k")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cone/RigidBody3D" unique_id=1792840057]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cone/RigidBody3D" unique_id=1792840057]
 shape = SubResource("ConvexPolygonShape3D_clh5k")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Cone/RigidBody3D" unique_id=1569978655]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Cone/RigidBody3D" unique_id=1569978655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41567993, 0)
 shape = SubResource("CylinderShape3D_25lfj")
 
-[node name="Cone_Strawberry" type="Tractable" parent="Row3" unique_id=1636889377 node_paths=PackedStringArray("RigidBody")]
+[node name="Cone_Strawberry" type="Tractable" parent="Level/Row3" unique_id=1636889377 node_paths=PackedStringArray("RigidBody")]
 Points = 5
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.78258, -2.3058863, 12.944102)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cone_Strawberry" unique_id=1525340706]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cone_Strawberry" unique_id=1525340706]
 collision_layer = 5
 mass = 0.203
 
-[node name="icecream_cone3" parent="Row3/Cone_Strawberry/RigidBody3D" unique_id=721638115 instance=ExtResource("59_clh5k")]
+[node name="icecream_cone3" parent="Level/Row3/Cone_Strawberry/RigidBody3D" unique_id=721638115 instance=ExtResource("59_clh5k")]
 
-[node name="icecream_bowl_icecream_strawberry2" parent="Row3/Cone_Strawberry/RigidBody3D/icecream_cone3" unique_id=1170964428 instance=ExtResource("54_x6qcj")]
+[node name="icecream_bowl_icecream_strawberry2" parent="Level/Row3/Cone_Strawberry/RigidBody3D/icecream_cone3" unique_id=1170964428 instance=ExtResource("54_x6qcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020713806, 0.47538984, 0.008987427)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cone_Strawberry/RigidBody3D" unique_id=1339292284]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cone_Strawberry/RigidBody3D" unique_id=1339292284]
 shape = SubResource("ConvexPolygonShape3D_clh5k")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Cone_Strawberry/RigidBody3D" unique_id=889375075]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Cone_Strawberry/RigidBody3D" unique_id=889375075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41567993, 0)
 shape = SubResource("CylinderShape3D_25lfj")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Row3/Cone_Strawberry/RigidBody3D" unique_id=760790142]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/Row3/Cone_Strawberry/RigidBody3D" unique_id=760790142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6270417, 0)
 shape = SubResource("SphereShape3D_8acsq")
 
-[node name="Cone_Vanilla" type="Tractable" parent="Row3" unique_id=249202155 node_paths=PackedStringArray("RigidBody")]
+[node name="Cone_Vanilla" type="Tractable" parent="Level/Row3" unique_id=249202155 node_paths=PackedStringArray("RigidBody")]
 Points = 5
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.78258, -2.3058863, 13.445645)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cone_Vanilla" unique_id=1912563879]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cone_Vanilla" unique_id=1912563879]
 collision_layer = 5
 mass = 0.203
 
-[node name="icecream_cone2" parent="Row3/Cone_Vanilla/RigidBody3D" unique_id=868245448 instance=ExtResource("59_clh5k")]
+[node name="icecream_cone2" parent="Level/Row3/Cone_Vanilla/RigidBody3D" unique_id=868245448 instance=ExtResource("59_clh5k")]
 
-[node name="icecream_bowl_icecream_vanilla2" parent="Row3/Cone_Vanilla/RigidBody3D/icecream_cone2" unique_id=1661795446 instance=ExtResource("55_4x8pb")]
+[node name="icecream_bowl_icecream_vanilla2" parent="Level/Row3/Cone_Vanilla/RigidBody3D/icecream_cone2" unique_id=1661795446 instance=ExtResource("55_4x8pb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0061187744, 0.4625486, -0.0021486282)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cone_Vanilla/RigidBody3D" unique_id=2044262735]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cone_Vanilla/RigidBody3D" unique_id=2044262735]
 shape = SubResource("ConvexPolygonShape3D_clh5k")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Cone_Vanilla/RigidBody3D" unique_id=82185964]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Cone_Vanilla/RigidBody3D" unique_id=82185964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41567993, 0)
 shape = SubResource("CylinderShape3D_25lfj")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Row3/Cone_Vanilla/RigidBody3D" unique_id=1956220379]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/Row3/Cone_Vanilla/RigidBody3D" unique_id=1956220379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6270417, 0)
 shape = SubResource("SphereShape3D_8acsq")
 
-[node name="Cone_Holder" type="Tractable" parent="Row3" unique_id=4627484 node_paths=PackedStringArray("RigidBody")]
+[node name="Cone_Holder" type="Tractable" parent="Level/Row3" unique_id=4627484 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.633934, -2.4583893, 12.944627)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cone_Holder" unique_id=1049898623]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cone_Holder" unique_id=1049898623]
 collision_layer = 5
 mass = 0.3
 
-[node name="cone_holder" parent="Row3/Cone_Holder/RigidBody3D" unique_id=1048396686 instance=ExtResource("60_gmyll")]
+[node name="cone_holder" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=1048396686 instance=ExtResource("60_gmyll")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=410017188]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=410017188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073913574, -0.44561768, 0.00021362305)
 shape = SubResource("BoxShape3D_25lfj")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=840801663]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=840801663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37983704, -0.22660828, 0.0022583008)
 shape = SubResource("BoxShape3D_w0273")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=1262421969]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=1262421969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11199188, -0.0014975071, 0.0011901855)
 shape = SubResource("BoxShape3D_mvfs8")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=1564734850]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=1564734850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16658401, -0.0014975071, 0.24736786)
 shape = SubResource("BoxShape3D_3psni")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=440161967]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=440161967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16658401, -0.0014975071, -0.24747276)
 shape = SubResource("BoxShape3D_3psni")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=467181727]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=467181727]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16658401, -0.0014975071, -0.7596226)
 shape = SubResource("BoxShape3D_fixv6")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Row3/Cone_Holder/RigidBody3D" unique_id=1203295543]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Level/Row3/Cone_Holder/RigidBody3D" unique_id=1203295543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16658401, -0.0014975071, 0.7562847)
 shape = SubResource("BoxShape3D_20lun")
 
-[node name="Cherry" type="Tractable" parent="Row3" unique_id=2009329566 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry" type="Tractable" parent="Level/Row3" unique_id=2009329566 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.45286, -2.07407, 9.849627)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry" unique_id=1595198849]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry" unique_id=1595198849]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry/RigidBody3D" unique_id=1477639499 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry/RigidBody3D" unique_id=1477639499 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry/RigidBody3D" unique_id=304184130]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry/RigidBody3D" unique_id=304184130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry2" type="Tractable" parent="Row3" unique_id=939430706 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry2" type="Tractable" parent="Level/Row3" unique_id=939430706 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.045654, -2.07407, 9.849627)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry2" unique_id=24623695]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry2" unique_id=24623695]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry2/RigidBody3D" unique_id=1658004337 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry2/RigidBody3D" unique_id=1658004337 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry2/RigidBody3D" unique_id=1063394869]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry2/RigidBody3D" unique_id=1063394869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry3" type="Tractable" parent="Row3" unique_id=1171696614 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry3" type="Tractable" parent="Level/Row3" unique_id=1171696614 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.282574, -2.07407, 9.561678)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry3" unique_id=766111119]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry3" unique_id=766111119]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry3/RigidBody3D" unique_id=565559818 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry3/RigidBody3D" unique_id=565559818 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry3/RigidBody3D" unique_id=1935854570]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry3/RigidBody3D" unique_id=1935854570]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry4" type="Tractable" parent="Row3" unique_id=292926461 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry4" type="Tractable" parent="Level/Row3" unique_id=292926461 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.90715, -2.07407, 9.572613)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry4" unique_id=678948307]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry4" unique_id=678948307]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry4/RigidBody3D" unique_id=1000778594 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry4/RigidBody3D" unique_id=1000778594 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry4/RigidBody3D" unique_id=1755952289]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry4/RigidBody3D" unique_id=1755952289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry5" type="Tractable" parent="Row3" unique_id=1508102220 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry5" type="Tractable" parent="Level/Row3" unique_id=1508102220 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.790516, -2.07407, 9.893365)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry5" unique_id=1223075285]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry5" unique_id=1223075285]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry5/RigidBody3D" unique_id=1853822403 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry5/RigidBody3D" unique_id=1853822403 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry5/RigidBody3D" unique_id=1525328353]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry5/RigidBody3D" unique_id=1525328353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry6" type="Tractable" parent="Row3" unique_id=681314026 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry6" type="Tractable" parent="Level/Row3" unique_id=681314026 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.980053, -2.07407, 10.130284)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry6" unique_id=239244049]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry6" unique_id=239244049]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry6/RigidBody3D" unique_id=1727106022 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry6/RigidBody3D" unique_id=1727106022 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry6/RigidBody3D" unique_id=1566037581]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry6/RigidBody3D" unique_id=1566037581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry7" type="Tractable" parent="Row3" unique_id=1183076531 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry7" type="Tractable" parent="Level/Row3" unique_id=1183076531 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2352, -1.8439823, 9.798597)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry7" unique_id=545625630]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry7" unique_id=545625630]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry7/RigidBody3D" unique_id=1636558526 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry7/RigidBody3D" unique_id=1636558526 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry7/RigidBody3D" unique_id=2022551503]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry7/RigidBody3D" unique_id=2022551503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry8" type="Tractable" parent="Row3" unique_id=495683303 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry8" type="Tractable" parent="Level/Row3" unique_id=495683303 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.920372, -1.8439823, 9.730886)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry8" unique_id=1954714815]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry8" unique_id=1954714815]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry8/RigidBody3D" unique_id=1514858507 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry8/RigidBody3D" unique_id=1514858507 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry8/RigidBody3D" unique_id=1122271592]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry8/RigidBody3D" unique_id=1122271592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry9" type="Tractable" parent="Row3" unique_id=1807222667 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry9" type="Tractable" parent="Level/Row3" unique_id=1807222667 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.028225, -1.8439823, 10.0349245)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry9" unique_id=761616439]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry9" unique_id=761616439]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry9/RigidBody3D" unique_id=1364014032 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry9/RigidBody3D" unique_id=1364014032 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry9/RigidBody3D" unique_id=2130130105]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry9/RigidBody3D" unique_id=2130130105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Cherry10" type="Tractable" parent="Row3" unique_id=513169454 node_paths=PackedStringArray("RigidBody")]
+[node name="Cherry10" type="Tractable" parent="Level/Row3" unique_id=513169454 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.229683, -2.07407, 10.064449)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Cherry10" unique_id=1580252417]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Cherry10" unique_id=1580252417]
 collision_layer = 5
 mass = 0.005
 
-[node name="icecream_cherry_flat" parent="Row3/Cherry10/RigidBody3D" unique_id=593756173 instance=ExtResource("60_kaxb6")]
+[node name="icecream_cherry_flat" parent="Level/Row3/Cherry10/RigidBody3D" unique_id=593756173 instance=ExtResource("60_kaxb6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Cherry10/RigidBody3D" unique_id=817167486]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Cherry10/RigidBody3D" unique_id=817167486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10489714, 0)
 shape = SubResource("SphereShape3D_clh5k")
 
-[node name="Chocolate_Icecream" type="Tractable" parent="Row3" unique_id=11511748 node_paths=PackedStringArray("RigidBody")]
+[node name="Chocolate_Icecream" type="Tractable" parent="Level/Row3" unique_id=11511748 node_paths=PackedStringArray("RigidBody")]
 Points = 10
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.023378, -3.1217172, 15.522988)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Chocolate_Icecream" unique_id=452617050]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Chocolate_Icecream" unique_id=452617050]
 collision_layer = 5
 mass = 2.5
 
-[node name="icecream_container3" parent="Row3/Chocolate_Icecream/RigidBody3D" unique_id=575112786 instance=ExtResource("61_c76dw")]
+[node name="icecream_container3" parent="Level/Row3/Chocolate_Icecream/RigidBody3D" unique_id=575112786 instance=ExtResource("61_c76dw")]
 transform = Transform3D(-5.4639237e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639237e-08, 0, 0, 0)
 
-[node name="icecream_container_icecream_chocolate2" parent="Row3/Chocolate_Icecream/RigidBody3D/icecream_container3" unique_id=881370966 instance=ExtResource("63_kb7ik")]
+[node name="icecream_container_icecream_chocolate2" parent="Level/Row3/Chocolate_Icecream/RigidBody3D/icecream_container3" unique_id=881370966 instance=ExtResource("63_kb7ik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030014038, 0.09298229, 0.0006322861)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Chocolate_Icecream/RigidBody3D" unique_id=2043673886]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Chocolate_Icecream/RigidBody3D" unique_id=2043673886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025878906, 0.062171936, -0.0012817383)
 shape = SubResource("BoxShape3D_v66oo")
 
-[node name="Strawberry_Icecream" type="Tractable" parent="Row3" unique_id=1286034392 node_paths=PackedStringArray("RigidBody")]
+[node name="Strawberry_Icecream" type="Tractable" parent="Level/Row3" unique_id=1286034392 node_paths=PackedStringArray("RigidBody")]
 Points = 10
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.050774, -3.2083943, 13.899206)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Strawberry_Icecream" unique_id=1005811730]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Strawberry_Icecream" unique_id=1005811730]
 collision_layer = 5
 mass = 2.5
 
-[node name="icecream_container4" parent="Row3/Strawberry_Icecream/RigidBody3D" unique_id=627805320 instance=ExtResource("61_c76dw")]
+[node name="icecream_container4" parent="Level/Row3/Strawberry_Icecream/RigidBody3D" unique_id=627805320 instance=ExtResource("61_c76dw")]
 transform = Transform3D(-5.4639237e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639237e-08, 0, 0, 0)
 
-[node name="icecream_container_icecream_strawberry2" parent="Row3/Strawberry_Icecream/RigidBody3D/icecream_container4" unique_id=1740742403 instance=ExtResource("64_3lh5p")]
+[node name="icecream_container_icecream_strawberry2" parent="Level/Row3/Strawberry_Icecream/RigidBody3D/icecream_container4" unique_id=1740742403 instance=ExtResource("64_3lh5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010391235, 0.109818935, -0.006495476)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Strawberry_Icecream/RigidBody3D" unique_id=2134725290]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Strawberry_Icecream/RigidBody3D" unique_id=2134725290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025878906, 0.062171936, -0.0012817383)
 shape = SubResource("BoxShape3D_v66oo")
 
-[node name="Vanilla_Icecream" type="Tractable" parent="Row3" unique_id=358735424 node_paths=PackedStringArray("RigidBody")]
+[node name="Vanilla_Icecream" type="Tractable" parent="Level/Row3" unique_id=358735424 node_paths=PackedStringArray("RigidBody")]
 Points = 10
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.09218, -3.210762, 12.495488)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Vanilla_Icecream" unique_id=1231185899]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Vanilla_Icecream" unique_id=1231185899]
 collision_layer = 5
 mass = 2.5
 
-[node name="icecream_container2" parent="Row3/Vanilla_Icecream/RigidBody3D" unique_id=962786229 instance=ExtResource("61_c76dw")]
+[node name="icecream_container2" parent="Level/Row3/Vanilla_Icecream/RigidBody3D" unique_id=962786229 instance=ExtResource("61_c76dw")]
 transform = Transform3D(-5.4639237e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639237e-08, 0, 0, 0)
 
-[node name="icecream_container_icecream_vanilla2" parent="Row3/Vanilla_Icecream/RigidBody3D/icecream_container2" unique_id=1766767193 instance=ExtResource("62_hf5xv")]
+[node name="icecream_container_icecream_vanilla2" parent="Level/Row3/Vanilla_Icecream/RigidBody3D/icecream_container2" unique_id=1766767193 instance=ExtResource("62_hf5xv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032615662, 0.1133765, 0.025933266)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Vanilla_Icecream/RigidBody3D" unique_id=1435855219]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Vanilla_Icecream/RigidBody3D" unique_id=1435855219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025878906, 0.062171936, -0.0012817383)
 shape = SubResource("BoxShape3D_v66oo")
 
-[node name="Kitchen_Roll" type="Tractable" parent="Row3" unique_id=2012407609 node_paths=PackedStringArray("RigidBody")]
+[node name="Kitchen_Roll" type="Tractable" parent="Level/Row3" unique_id=2012407609 node_paths=PackedStringArray("RigidBody")]
 Points = 3
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.741184, -3.3127933, -20.719826)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Kitchen_Roll" unique_id=1023193041]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Kitchen_Roll" unique_id=1023193041]
 collision_layer = 5
 mass = 0.3
 
-[node name="papertowel2" parent="Row3/Kitchen_Roll/RigidBody3D" unique_id=261293047 instance=ExtResource("65_yinmb")]
+[node name="papertowel2" parent="Level/Row3/Kitchen_Roll/RigidBody3D" unique_id=261293047 instance=ExtResource("65_yinmb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Kitchen_Roll/RigidBody3D" unique_id=625613100]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Kitchen_Roll/RigidBody3D" unique_id=625613100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15206909, 0)
 shape = SubResource("CylinderShape3D_8acsq")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Kitchen_Roll/RigidBody3D" unique_id=1219600842]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Kitchen_Roll/RigidBody3D" unique_id=1219600842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9150734, 0)
 shape = SubResource("CylinderShape3D_w0273")
 
-[node name="Stew_Bowl" type="Tractable" parent="Row3" unique_id=1531184059]
+[node name="Stew_Bowl" type="Tractable" parent="Level/Row3" unique_id=1531184059]
 Points = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.848694, -2.823233, -17.084581)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Stew_Bowl" unique_id=1516335389]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Stew_Bowl" unique_id=1516335389]
 collision_layer = 5
 mass = 1.1
 
-[node name="food_stew2" parent="Row3/Stew_Bowl/RigidBody3D" unique_id=301154169 instance=ExtResource("66_am30o")]
+[node name="food_stew2" parent="Level/Row3/Stew_Bowl/RigidBody3D" unique_id=301154169 instance=ExtResource("66_am30o")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Stew_Bowl/RigidBody3D" unique_id=121822129]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Stew_Bowl/RigidBody3D" unique_id=121822129]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hf5xv")
 
-[node name="Pizza" type="Tractable" parent="Row3" unique_id=1545492689 node_paths=PackedStringArray("RigidBody")]
+[node name="Pizza" type="Tractable" parent="Level/Row3" unique_id=1545492689 node_paths=PackedStringArray("RigidBody")]
 Points = 5
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.588634, -2.6482935, -21.264067)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Pizza" unique_id=425607590]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Pizza" unique_id=425607590]
 collision_layer = 5
 mass = 0.2
 
-[node name="food_pizza_pepperoni_slice2" parent="Row3/Pizza/RigidBody3D" unique_id=62911488 instance=ExtResource("67_2n7x4")]
+[node name="food_pizza_pepperoni_slice2" parent="Level/Row3/Pizza/RigidBody3D" unique_id=62911488 instance=ExtResource("67_2n7x4")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Pizza/RigidBody3D" unique_id=170958153]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Pizza/RigidBody3D" unique_id=170958153]
 shape = SubResource("ConvexPolygonShape3D_gmyll")
 
-[node name="Bun_Bottom" type="Tractable" parent="Row3" unique_id=1837016556 node_paths=PackedStringArray("RigidBody")]
+[node name="Bun_Bottom" type="Tractable" parent="Level/Row3" unique_id=1837016556 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4176, -2.0441055, -19.051826)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Bun_Bottom" unique_id=1190957822]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Bun_Bottom" unique_id=1190957822]
 collision_layer = 5
 mass = 0.05
 
-[node name="food_ingredient_bun_bottom2" parent="Row3/Bun_Bottom/RigidBody3D" unique_id=1697180929 instance=ExtResource("68_d0tc5")]
+[node name="food_ingredient_bun_bottom2" parent="Level/Row3/Bun_Bottom/RigidBody3D" unique_id=1697180929 instance=ExtResource("68_d0tc5")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Bun_Bottom/RigidBody3D" unique_id=941478949]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Bun_Bottom/RigidBody3D" unique_id=941478949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10392761, 0)
 shape = SubResource("CylinderShape3D_3psni")
 
-[node name="Bun_Top" type="Tractable" parent="Row3" unique_id=2032379636 node_paths=PackedStringArray("RigidBody")]
+[node name="Bun_Top" type="Tractable" parent="Level/Row3" unique_id=2032379636 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.420685, -0.8620138, -19.080687)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Bun_Top" unique_id=859749575]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Bun_Top" unique_id=859749575]
 collision_layer = 5
 mass = 0.05
 
-[node name="food_ingredient_bun_top2" parent="Row3/Bun_Top/RigidBody3D" unique_id=1503490225 instance=ExtResource("69_v66oo")]
+[node name="food_ingredient_bun_top2" parent="Level/Row3/Bun_Top/RigidBody3D" unique_id=1503490225 instance=ExtResource("69_v66oo")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Bun_Top/RigidBody3D" unique_id=814183138]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Bun_Top/RigidBody3D" unique_id=814183138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13965607, 0)
 shape = SubResource("CylinderShape3D_fixv6")
 
-[node name="Burger" type="Tractable" parent="Row3" unique_id=404193769 node_paths=PackedStringArray("RigidBody")]
+[node name="Burger" type="Tractable" parent="Level/Row3" unique_id=404193769 node_paths=PackedStringArray("RigidBody")]
 Points = 3
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.422832, -1.7008562, -19.032513)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Burger" unique_id=1261619504]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Burger" unique_id=1261619504]
 collision_layer = 5
 mass = 0.25
 
-[node name="food_ingredient_burger_cooked2" parent="Row3/Burger/RigidBody3D" unique_id=2031855819 instance=ExtResource("49_yyb00")]
+[node name="food_ingredient_burger_cooked2" parent="Level/Row3/Burger/RigidBody3D" unique_id=2031855819 instance=ExtResource("49_yyb00")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Burger/RigidBody3D" unique_id=22840886]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Burger/RigidBody3D" unique_id=22840886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09667969, 0)
 shape = SubResource("CylinderShape3D_20lun")
 
-[node name="Lettuce_Slice" type="Tractable" parent="Row3" unique_id=1221747841 node_paths=PackedStringArray("RigidBody")]
+[node name="Lettuce_Slice" type="Tractable" parent="Level/Row3" unique_id=1221747841 node_paths=PackedStringArray("RigidBody")]
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.439888, -1.2505326, -19.045303)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Lettuce_Slice" unique_id=311898305]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Lettuce_Slice" unique_id=311898305]
 collision_layer = 5
 mass = 0.075
 
-[node name="food_ingredient_lettuce_slice2" parent="Row3/Lettuce_Slice/RigidBody3D" unique_id=1301793887 instance=ExtResource("20_e37q2")]
+[node name="food_ingredient_lettuce_slice2" parent="Level/Row3/Lettuce_Slice/RigidBody3D" unique_id=1301793887 instance=ExtResource("20_e37q2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Lettuce_Slice/RigidBody3D" unique_id=1927419395]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Lettuce_Slice/RigidBody3D" unique_id=1927419395]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01940918, 0)
 shape = SubResource("CylinderShape3D_kb7ik")
 
-[node name="Bowl3" type="Tractable" parent="Row3" unique_id=373680520 node_paths=PackedStringArray("RigidBody")]
+[node name="Bowl3" type="Tractable" parent="Level/Row3" unique_id=373680520 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.16428, -2.7868176, 9.810658)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Bowl3" unique_id=591641285]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Bowl3" unique_id=591641285]
 collision_layer = 5
 mass = 0.6
 
-[node name="icecream_bowl2" parent="Row3/Bowl3/RigidBody3D" unique_id=314018560 instance=ExtResource("57_bidqp")]
+[node name="icecream_bowl2" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=314018560 instance=ExtResource("57_bidqp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=1429629641]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=1429629641]
 transform = Transform3D(1, 0, 0, 0, 0.80031294, -0.5995825, 0, 0.5995825, 0.80031294, 0.003967285, 0.23183393, 0.443223)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=834191434]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=834191434]
 transform = Transform3D(-1, -5.23683e-08, -7.000215e-08, 0, 0.8007313, -0.5990235, 8.742278e-08, -0.5990235, -0.8007313, 0.003967285, 0.23183393, -0.44519854)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=1674893855]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=1674893855]
 transform = Transform3D(-4.371139e-08, 0.5990235, 0.80073124, 0, 0.80073124, -0.5990235, -1, -2.6184148e-08, -3.5001076e-08, 0.4671334, 0.23183393, 0.03902197)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=968216982]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=968216982]
 transform = Transform3D(-4.371139e-08, -0.59902346, -0.80073124, 0, 0.80073124, -0.59902346, 1, -2.6184146e-08, -3.5001072e-08, -0.4693613, 0.23183417, 0.03714466)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=1990428685]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=1990428685]
 transform = Transform3D(0.70710677, 0.42396882, 0.56590664, 0, 0.8003129, -0.59958243, -0.70710677, 0.42396882, 0.56590664, 0.30351377, 0.23183393, 0.31704187)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=1477256934]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=1477256934]
 transform = Transform3D(-0.70710665, -0.42357367, -0.5662026, 4.5000256e-15, 0.8007313, -0.5990235, 0.7071069, -0.42357352, -0.5662024, -0.3246951, 0.23183393, -0.31116676)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=503548662]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=503548662]
 transform = Transform3D(-0.7071068, 0.42357355, 0.56620246, -1.7763568e-15, 0.8007312, -0.5990235, -0.7071067, -0.4235736, -0.56620246, 0.3452084, 0.23183393, -0.29627895)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=146902564]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=146902564]
 transform = Transform3D(0.70710665, -0.42357352, -0.56620246, -1.7763568e-15, 0.8007312, -0.5990234, 0.7071068, 0.42357352, 0.5662025, -0.31832075, 0.23183417, 0.3645954)
 shape = SubResource("BoxShape3D_kaxb6")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="Row3/Bowl3/RigidBody3D" unique_id=1738165203]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Level/Row3/Bowl3/RigidBody3D" unique_id=1738165203]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.9999997, 0, 0, 0, 0.99999976, 0, 0.023334265, 0)
 shape = SubResource("CylinderShape3D_hf5xv")
 debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
-[node name="Plate2" type="Tractable" parent="Row3" unique_id=797697659 node_paths=PackedStringArray("RigidBody")]
+[node name="Plate2" type="Tractable" parent="Level/Row3" unique_id=797697659 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.415745, -2.9913979, -21.82346)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Plate2" unique_id=1568969482]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Plate2" unique_id=1568969482]
 collision_layer = 5
 mass = 0.4
 
-[node name="plate2" parent="Row3/Plate2/RigidBody3D" unique_id=615639785 instance=ExtResource("6_usrld")]
+[node name="plate2" parent="Level/Row3/Plate2/RigidBody3D" unique_id=615639785 instance=ExtResource("6_usrld")]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Plate2/RigidBody3D" unique_id=1887054459]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Plate2/RigidBody3D" unique_id=1887054459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
 shape = SubResource("CylinderShape3D_mvfs8")
 
-[node name="Plate3" type="Tractable" parent="Row3" unique_id=627072548 node_paths=PackedStringArray("RigidBody")]
+[node name="Plate3" type="Tractable" parent="Level/Row3" unique_id=627072548 node_paths=PackedStringArray("RigidBody")]
 Points = 2
 RigidBody = NodePath("RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.415745, -2.9913979, -19.079203)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Row3/Plate3" unique_id=181948187]
+[node name="RigidBody3D" type="RigidBody3D" parent="Level/Row3/Plate3" unique_id=181948187]
 collision_layer = 5
 mass = 0.4
 
-[node name="plate2" parent="Row3/Plate3/RigidBody3D" unique_id=1049292187 instance=ExtResource("6_usrld")]
+[node name="plate2" parent="Level/Row3/Plate3/RigidBody3D" unique_id=1049292187 instance=ExtResource("6_usrld")]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Row3/Plate3/RigidBody3D" unique_id=1944694239]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Plate3/RigidBody3D" unique_id=1944694239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
 shape = SubResource("CylinderShape3D_mvfs8")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=594928652]
-transform = Transform3D(0.6217644, 0.62132007, -0.4768336, -0.02330546, 0.62323177, 0.7816898, 0.7828574, -0.4749141, 0.40198353, -2.8286734, 11.830098, 14.1439295)
+transform = Transform3D(0.9996624, 0.005542043, 0.025385534, -0.02330546, 0.6232318, 0.78168976, -0.0114889145, -0.7820175, 0.6231506, -41.919975, 0.4043224, 5.2810087)
 script = ExtResource("70_kaxb6")
