@@ -6,7 +6,6 @@
 #include <godot_cpp/godot.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-#include "globals.h"
 #include "Player/player_move.h"
 #include "tractable.h"
 #include "camera_follow.h"
@@ -18,8 +17,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	ClassDB::register_class<Globals>();
-	Engine::get_singleton()->register_singleton("Globals", memnew(Globals));
+	//ClassDB::register_class<Globals>();
+	//Engine::get_singleton()->register_singleton("Globals", memnew(Globals));
 	GDREGISTER_RUNTIME_CLASS(PlayerMove);
 	GDREGISTER_RUNTIME_CLASS(Tractable);
 	GDREGISTER_RUNTIME_CLASS(CameraFollow);

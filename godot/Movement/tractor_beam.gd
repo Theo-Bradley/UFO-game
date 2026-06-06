@@ -5,6 +5,7 @@ var ray_points : Array;
 var cone_points : Array;
 @export var numRays : int;
 @export var ray_height : float = 3.0;
+@export var traction_force : float = 0.1;
 @export var ImmediateGeo : ImmediateMesh;
 signal collect;
 
@@ -37,5 +38,5 @@ func _physics_process(delta: float) -> void:
 		if !result.is_empty():
 			var rb = result["collider"] as RigidBody3D;
 			if (!rb.get_parent().is_queued_for_deletion()):
-				(rb.get_parent() as Tractable).add_global_force(result["position"], global_position - result["position"]);
+				(rb.get_parent() as Tractable).add_global_force(result["position"], global_position - result["position"], traction_force);
 	pass

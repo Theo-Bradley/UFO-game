@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6jirnckvb7wf"]
 
-[ext_resource type="PackedScene" uid="uid://nlm8h2wk2qo1" path="res://Models/UFO/UFO.glb" id="1_dopyg"]
+[ext_resource type="PackedScene" uid="uid://du82tk4eyc8gp" path="res://Prefabs/player.tscn" id="1_bidqp"]
 [ext_resource type="PackedScene" uid="uid://ypadofknawm7" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink_large.gltf" id="2_k4xwx"]
 [ext_resource type="PackedScene" uid="uid://d36r0bqsoaoge" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink.gltf" id="3_ad6rl"]
 [ext_resource type="PackedScene" uid="uid://b1vb3wcxfp84y" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.gltf" id="4_1o1wr"]
@@ -352,8 +352,14 @@ radius = 0.35058594
 
 [node name="Kitchen01" type="Node3D" unique_id=1286124264]
 
-[node name="UFO" parent="." unique_id=555372883 instance=ExtResource("1_dopyg")]
-transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 2.1853955, 0.29881135, 0.4549858)
+[node name="Player" parent="." unique_id=277190972 instance=ExtResource("1_bidqp")]
+
+[node name="PlayerCamera" type="CameraFollow" parent="." unique_id=810180793 node_paths=PackedStringArray("Target")]
+Target = NodePath("../Player/PlayerMove/RigidBody3D")
+"Delay Frames Count" = 15
+"Camera Offset" = Vector3(0, 4, 4)
+"Camera Tilt Offset" = Vector3(0, 1, 0)
+script = ExtResource("70_kaxb6")
 
 [node name="Level" type="Node3D" parent="." unique_id=899404319]
 
@@ -2666,7 +2672,3 @@ transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Plate3/RigidBody3D" unique_id=1944694239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
 shape = SubResource("CylinderShape3D_mvfs8")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=594928652]
-transform = Transform3D(0.9996624, 0.005542043, 0.025385534, -0.02330546, 0.6232318, 0.78168976, -0.0114889145, -0.7820175, 0.6231506, -41.919975, 0.4043224, 5.2810087)
-script = ExtResource("70_kaxb6")

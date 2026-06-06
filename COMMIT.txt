@@ -1,2 +1,3 @@
-Fixed Some models depending on multiple versions of restaurantbits_extra.png, now all should point to correct version (inside the gltf folder)
-Removed restaurant bits/texutres folder which contained only a duplicate texture atlas
+Converted player from Movement/test.tscn to a prefab scene Prefabs/player.tscn
+Converted Tractable to apply more force the more rays hit it.
+Removed Globals.h
