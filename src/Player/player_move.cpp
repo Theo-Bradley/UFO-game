@@ -16,6 +16,10 @@ void PlayerMove::_bind_methods()
 	ClassDB::bind_method(D_METHOD("set_turn_speed", "val"), &PlayerMove::set_turn_speed);
 	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Turning Speed"), "set_turn_speed", "get_turn_speed");
 
+	ClassDB::bind_method(D_METHOD("get_height_speed"), &PlayerMove::get_height_speed);
+	ClassDB::bind_method(D_METHOD("set_height_speed", "val"), &PlayerMove::set_height_speed);
+	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "Vertical Speed"), "set_height_speed", "get_height_speed");
+
 	ClassDB::bind_method(D_METHOD("get_rb"), &PlayerMove::get_rb);
 	ClassDB::bind_method(D_METHOD("set_rb", "ref"), &PlayerMove::set_rb);
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "RigidBody", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rb", "get_rb");
@@ -28,6 +32,7 @@ void PlayerMove::_process(double delta)
 #define input Input::get_singleton()
 
 	move_direction = Vector2(0, 0);
+	height_change = 0;
 	if (input->get_action_strength("Left"))
 	{
 		move_direction += Vector2(-1, 0);
@@ -43,6 +48,15 @@ void PlayerMove::_process(double delta)
 	if (input->get_action_strength("Backward"))
 	{
 		move_direction += Vector2(0, 1);
+	}
+	if (input->get_action_strength("Upward"))
+	{
+		height_change = -1;
+	}
+	
+	if (input->get_action_strength("Downward"))
+	{
+		height_change = 1;
 	}
 }
 
@@ -61,6 +75,8 @@ void PlayerMove::_physics_process(double delta)
 				get_rb()->rotate_y(Math::min(turn_speed * (float)delta, Math::abs(angle)) * Math::abs(angle) / angle);
 		}
 		ref->apply_central_force(Vector3(f.x, 0.0f, f.y));
+		Vector3 pos = ref->get_position();
+		ref->set_position(Vector3(pos.x, pos.y - (height_speed * height_change * delta), pos.z));
 	}
 }
 
@@ -93,6 +109,16 @@ float PlayerMove::get_turn_speed()
 void PlayerMove::set_turn_speed(float val)
 {
 	turn_speed = val;
+}
+
+float PlayerMove::get_height_speed()
+{
+	return height_speed;
+}
+
+void PlayerMove::set_height_speed(float val)
+{
+	height_speed = val;
 }
 
 RigidBody3D* PlayerMove::get_rb()

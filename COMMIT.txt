@@ -1,3 +1,3 @@
-Converted player from Movement/test.tscn to a prefab scene Prefabs/player.tscn
-Converted Tractable to apply more force the more rays hit it.
-Removed Globals.h
+Added angular damping to all scene RigidBodies to stabillize their behaviour
+Extended player ray height
+Added player vertical movement

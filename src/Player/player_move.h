@@ -18,7 +18,9 @@ protected:
 	float move_accel = 1.0;
 	float move_speed = 5.0;
 	float turn_speed = 0.1f; //rad*sec^-1
+	float height_speed = 1.0f;
 	Vector2 move_direction = Vector2(0.0f, 0.0f);
+	int height_change = 0;
 	ObjectID rb;
 
 public:
@@ -37,6 +39,8 @@ public:
 	void set_move_accel(float val);
 	float get_turn_speed();
 	void set_turn_speed(float val);
+	float get_height_speed();
+	void set_height_speed(float val);
 	RigidBody3D* get_rb();
 	void set_rb(RigidBody3D* ref);
 };

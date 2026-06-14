@@ -19,6 +19,9 @@
 		<member name="Turning Speed" type="" getter="" setter="">
 			The speed at which the [RigidBody3D] turns to face the movement direction in radians per second.
 		</member>
+		<member name="Vertical Speed" type="" getter="" setter="">
+			The speed at which the [RigidBody3D] moves up and down.
+		</member>
 	</members>
 	<methods>
 		<method name="_process" qualifiers="virtual">
@@ -29,6 +32,8 @@
 				Right (X+)
 				Forward (Z-)
 				Backward (Z+)
+				Upward (Y+)
+				Downward (Y-)
 			</description>
 		</method>
 				<method name="_physics_process" qualifiers="virtual">
