@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://du82tk4eyc8gp" path="res://Prefabs/player.tscn" id="1_bidqp"]
 [ext_resource type="PackedScene" uid="uid://ypadofknawm7" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink_large.gltf" id="2_k4xwx"]
+[ext_resource type="PackedScene" uid="uid://syxcuuhdugav" path="res://Models/Kitchen Props/fridge_door.gltf" id="3_8acsq"]
 [ext_resource type="PackedScene" uid="uid://d36r0bqsoaoge" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink.gltf" id="3_ad6rl"]
 [ext_resource type="PackedScene" uid="uid://b1vb3wcxfp84y" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.gltf" id="4_1o1wr"]
 [ext_resource type="PackedScene" uid="uid://77brfogj2cx" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/plate.gltf" id="6_usrld"]
@@ -34,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bo4bigpwetqra" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_D.gltf" id="32_3q3ll"]
 [ext_resource type="PackedScene" uid="uid://cjqpmaavl72oh" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_E.gltf" id="33_iormp"]
 [ext_resource type="PackedScene" uid="uid://bh5cdym6gp7c2" path="res://Models/Kitchen Props/food_ingredient_mushroom_gib_F.gltf" id="34_el6v0"]
+[ext_resource type="PackedScene" uid="uid://fju1o01t1olu" path="res://Prefabs/flame.tscn" id="37_clh5k"]
 [ext_resource type="PackedScene" uid="uid://jypfp5lvj01r" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/extractorhood.gltf" id="38_ehb77"]
 [ext_resource type="PackedScene" uid="uid://c2fs30unv2bs4" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_steak.gltf" id="39_p2vng"]
 [ext_resource type="PackedScene" uid="uid://c4vhxvg73m45q" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_pepperoni_flat.gltf" id="40_yyb00"]
@@ -67,7 +69,15 @@
 [ext_resource type="PackedScene" uid="uid://4rk1u0262k7m" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_bun_top.gltf" id="69_v66oo"]
 [ext_resource type="Script" uid="uid://bf1gwoptebv66" path="res://Scripts/fps_counter.gd" id="70_kaxb6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckcik"]
+size = Vector3(28, 15, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j552k"]
+diffuse_mode = 3
+albedo_color = Color(0.53333336, 0.5764706, 0.59607846, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_gs1nn"]
+material = SubResource("StandardMaterial3D_j552k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dopyg"]
 
@@ -110,7 +120,27 @@ size = Vector3(1.621521, 0.07519531, 0.36901855)
 height = 0.14703369
 radius = 0.71728516
 
-[sub_resource type="BoxMesh" id="BoxMesh_5rpu8"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gmyll"]
+emission_shape = 3
+emission_box_extents = Vector3(1.5, 0.25, 1)
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = -0.049999997
+initial_velocity_max = 0.049999997
+radial_velocity_min = -0.0100223515
+radial_velocity_max = 0.009977648
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kaxb6"]
+shading_mode = 0
+albedo_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c76dw"]
+material = SubResource("StandardMaterial3D_kaxb6")
+radius = 0.1
+height = 0.2
+radial_segments = 4
+rings = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uswt4"]
 material = ExtResource("7_wpppf")
@@ -233,8 +263,6 @@ radius = 0.16259766
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5i8ly"]
 height = 0.09082031
 radius = 0.15673828
-
-[sub_resource type="BoxMesh" id="BoxMesh_ehrt8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dhi6j"]
 size = Vector3(8.022339, 4.1010437, 36.933723)
@@ -373,10 +401,19 @@ directional_shadow_mode = 1
 directional_shadow_blend_splits = true
 
 [node name="Freezer" type="Node3D" parent="Level" unique_id=23207330]
-transform = Transform3D(25, 0, 0, 0, 15, 0, 0, 0, 20, -29.619678, 0, -15.067405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.619678, 0, -15.067405)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Freezer" unique_id=439613617]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Freezer/StaticBody3D" unique_id=2049055905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4655762, 0, 0)
+shape = SubResource("BoxShape3D_ckcik")
+
+[node name="fridge_door" parent="Level/Freezer" unique_id=1479117810 instance=ExtResource("3_8acsq")]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 12.961298, -0.49332762, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Freezer" unique_id=1184573983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12363005, 0, 0)
+transform = Transform3D(28, 0, 0, 0, 15, 0, 0, 0, 20, -1.3965492, 0, 0)
 mesh = SubResource("BoxMesh_gs1nn")
 
 [node name="Floor" type="Node3D" parent="Level" unique_id=384122848]
@@ -541,10 +578,13 @@ shape = SubResource("CylinderShape3D_mvfs8")
 
 [node name="Sink" type="Node" parent="Level/WashPit" unique_id=474558914]
 
-[node name="bubbles" type="MeshInstance3D" parent="Level/WashPit/Sink" unique_id=1845997063]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -32.901863, -4.772033, -1.7486639)
-mesh = SubResource("BoxMesh_5rpu8")
-skeleton = NodePath("../water")
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Level/WashPit/Sink" unique_id=379731175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.901863, -4.7026057, -1.7486639)
+amount = 16
+lifetime = 12.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_gmyll")
+draw_pass_1 = SubResource("SphereMesh_c76dw")
 
 [node name="water" type="MeshInstance3D" parent="Level/WashPit/Sink" unique_id=1442201597]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.574596, -4.77653, -1.7425427)
@@ -1582,17 +1622,14 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016987085, -0.0014648438, -0.007881641)
 shape = SubResource("CylinderShape3D_5i8ly")
 
-[node name="flame" type="MeshInstance3D" parent="Level/Row" unique_id=1533505280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0914154, -3.0632286, -9.095135)
-mesh = SubResource("BoxMesh_ehrt8")
+[node name="flame" parent="Level/Row" unique_id=430021070 instance=ExtResource("37_clh5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0914154, -3.2472873, -9.119404)
 
-[node name="flame2" type="MeshInstance3D" parent="Level/Row" unique_id=807413775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1019857, -3.0632286, -9.095135)
-mesh = SubResource("BoxMesh_ehrt8")
+[node name="flame2" parent="Level/Row" unique_id=620551829 instance=ExtResource("37_clh5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1019857, -3.2472873, -9.095135)
 
-[node name="flame3" type="MeshInstance3D" parent="Level/Row" unique_id=1954541034]
+[node name="flame3" parent="Level/Row" unique_id=444716575 instance=ExtResource("37_clh5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1722624, -3.0632286, -12.207691)
-mesh = SubResource("BoxMesh_ehrt8")
 
 [node name="extractorhood2" parent="Level/Row" unique_id=250508680 instance=ExtResource("38_ehb77")]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2, 0, 3, 0, -1.3113416e-07, 2.776699, -0.4787619, -10.7948475)
