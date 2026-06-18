@@ -25,7 +25,7 @@ radius = 0.8442608
 [node name="Player" type="Node3D" unique_id=277190972]
 
 [node name="PlayerMove" type="PlayerMove" parent="." unique_id=1727391010 node_paths=PackedStringArray("RigidBody")]
-"Max Speed" = 10.0
+"Max Speed" = 15.0
 "Moving Acceleration" = 15.0
 "Turning Speed" = 18.912
 "Vertical Speed" = 2.5
@@ -53,6 +53,7 @@ disabled = true
 script = ExtResource("1_5wxv7")
 numRays = 20
 ray_height = 3.5
+traction_force = 0.05
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
 [node name="TractorMesh" type="MeshInstance3D" parent="PlayerMove/RigidBody3D/TractorOrigin" unique_id=1920690472]

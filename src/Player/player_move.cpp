@@ -76,7 +76,8 @@ void PlayerMove::_physics_process(double delta)
 		}
 		ref->apply_central_force(Vector3(f.x, 0.0f, f.y));
 		Vector3 pos = ref->get_position();
-		ref->set_position(Vector3(pos.x, pos.y - (height_speed * height_change * delta), pos.z));
+		if ((height_change < 0 && pos.y <= 6.0) || (height_change > 0 && pos.y >= -6.0))
+			ref->set_position(Vector3(pos.x, pos.y - (height_speed * height_change * delta), pos.z));
 	}
 }
 

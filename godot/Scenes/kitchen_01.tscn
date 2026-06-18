@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://nonytpm0m1rp" path="res://Shaders/water.tres" id="7_wpppf"]
 [ext_resource type="PackedScene" uid="uid://cb2n1vtmvi4ki" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_styleB_flat.gltf" id="9_skh0u"]
 [ext_resource type="PackedScene" uid="uid://c8y6pi6fxnf24" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/oven_on.gltf" id="10_g17hl"]
+[ext_resource type="PackedScene" uid="uid://b6djtkyjta8ja" path="res://Models/Kitchen Props/bin.gltf" id="10_gmyll"]
 [ext_resource type="PackedScene" uid="uid://cje6d6dh6ncis" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/oven.gltf" id="10_txjp7"]
 [ext_resource type="PackedScene" uid="uid://bjfes1qw8n8iw" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/stove_single_countertop.gltf" id="11_xnwpj"]
 [ext_resource type="PackedScene" uid="uid://gvv2v2rjn1wl" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_top_only_backsplash_styleB_flat.gltf" id="12_jghi2"]
@@ -67,7 +68,6 @@
 [ext_resource type="PackedScene" uid="uid://cnk3a5jn8ylbc" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_pizza_pepperoni_slice.gltf" id="67_2n7x4"]
 [ext_resource type="PackedScene" uid="uid://cjqc3hmcmxc2d" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_bun_bottom.gltf" id="68_d0tc5"]
 [ext_resource type="PackedScene" uid="uid://4rk1u0262k7m" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_bun_top.gltf" id="69_v66oo"]
-[ext_resource type="Script" uid="uid://bf1gwoptebv66" path="res://Scripts/fps_counter.gd" id="70_kaxb6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckcik"]
 size = Vector3(28, 15, 20)
@@ -146,15 +146,14 @@ rings = 2
 material = ExtResource("7_wpppf")
 size = Vector2(10, 3)
 
-[sub_resource type="BoxMesh" id="BoxMesh_mveov"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_j552k"]
+size = Vector3(4, 4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c76dw"]
-size = Vector3(7.998413, 3.9840088, 39.375824)
+size = Vector3(7.998413, 3.9840088, 38.321823)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cbsxd"]
 size = Vector3(2.6115723, 0.2763672, 2.6151123)
-
-[sub_resource type="BoxMesh" id="BoxMesh_q5v6y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hf5xv"]
 size = Vector3(1.4736938, 0.059753418, 1.9853516)
@@ -265,7 +264,7 @@ height = 0.09082031
 radius = 0.15673828
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dhi6j"]
-size = Vector3(8.022339, 4.1010437, 36.933723)
+size = Vector3(8.022339, 4.1010437, 37.977116)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmyll"]
 radius = 0.19433594
@@ -388,7 +387,6 @@ Target = NodePath("../Player/PlayerMove/RigidBody3D")
 "Delay Frames Count" = 15
 "Camera Offset" = Vector3(0, 4, 4)
 "Camera Tilt Offset" = Vector3(0, 1, 0)
-script = ExtResource("70_kaxb6")
 
 [node name="Level" type="Node3D" parent="." unique_id=899404319]
 
@@ -420,6 +418,7 @@ mesh = SubResource("BoxMesh_gs1nn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Floor" unique_id=630822971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0191016)
 mesh = SubResource("PlaneMesh_mveov")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Floor" unique_id=1219673593]
@@ -642,11 +641,14 @@ transform = Transform3D(1.4894485, 0.11840397, 0, -0.17760599, 0.9929655, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063690186, 0)
 shape = SubResource("CylinderShape3D_mvfs8")
 
-[node name="WashPitShelf" type="Node3D" parent="Level" unique_id=194317267]
-transform = Transform3D(4.5, 0, 0, 0, 12.5, 0, 0, 0, 4.5, -24.456902, -1.1590319, -2.961966)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level" unique_id=1581477110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.280918, -5.432789, -1.7653122)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/WashPitShelf" unique_id=1619419307]
-mesh = SubResource("BoxMesh_mveov")
+[node name="bin" parent="Level/StaticBody3D" unique_id=1430792443 instance=ExtResource("10_gmyll")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D" unique_id=64262634]
+shape = SubResource("BoxShape3D_j552k")
 
 [node name="Row" type="Node" parent="Level" unique_id=783434776]
 
@@ -673,11 +675,14 @@ transform = Transform3D(-8.305164e-08, 0, -1.9, 0, 2, 0, 1.9, 0, -8.305164e-08, 
 [node name="oven3" parent="Level/Row/Counters" unique_id=2015603711 instance=ExtResource("10_txjp7")]
 transform = Transform3D(-8.305164e-08, 0, -1.9, 0, 2, 0, 1.9, 0, -8.305164e-08, -1.2308879, -7.810862, -12.608205)
 
+[node name="bin" parent="Level/Row/Counters" unique_id=312218948 instance=ExtResource("10_gmyll")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 0.10178375, -6.612865, 20.231468)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Row/Counters" unique_id=263842744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.8245153, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row/Counters/StaticBody3D" unique_id=2126593926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1326294, 0.34014893, 5.27565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1326294, 0.34014893, 4.7486496)
 shape = SubResource("BoxShape3D_c76dw")
 
 [node name="Stoves" type="Node" parent="Level/Row" unique_id=1980260583]
@@ -733,10 +738,6 @@ transform = Transform3D(-1.7302502, -1.0031123, 8.742279e-08, 7.563164e-08, 4.38
 
 [node name="knob4" parent="Level/Row" unique_id=477837723 instance=ExtResource("14_va151")]
 transform = Transform3D(-1.3440619, 1.4810463, 8.742278e-08, 5.8750803e-08, -6.473859e-08, 2, 1.4810463, 1.3440619, 2.8298136e-15, -3.6112163, -3.349, -12.034871)
-
-[node name="CounterBin" type="MeshInstance3D" parent="Level/Row" unique_id=132047434]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.10178375, -5.200088, 20.231468)
-mesh = SubResource("BoxMesh_q5v6y")
 
 [node name="chopping_board" type="Node" parent="Level/Row" unique_id=1312268530]
 
@@ -1715,7 +1716,7 @@ transform = Transform3D(-1.7484555e-07, 0, 3, 0, 4, 0, -4, 0, -1.3113416e-07, 14
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.665562, -3.9194767, -9.536743e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row2/Counters/Counter" unique_id=1279398008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3319702, -1.5681484, -6.4777412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3319702, -1.5681484, -6.9994373)
 shape = SubResource("BoxShape3D_dhi6j")
 
 [node name="oven_on2" parent="Level/Row2" unique_id=1221697338 instance=ExtResource("10_g17hl")]
@@ -1778,10 +1779,8 @@ shape = SubResource("BoxShape3D_cbsxd")
 [node name="knob8" parent="Level/Row2" unique_id=757248886 instance=ExtResource("14_va151")]
 transform = Transform3D(-8.742278e-08, -2, -8.742278e-08, 0, -8.742278e-08, 2, -2, 8.742278e-08, 3.821371e-15, 19.427319, -3.349, 9.442877)
 
-[node name="CounterBin2" type="MeshInstance3D" parent="Level/Row2" unique_id=688639440]
-transform = Transform3D(-4, 0, -3.496911e-07, 0, 4, 0, 3.496911e-07, 0, -4, 15.714315, -5.200088, -22.823463)
-mesh = SubResource("BoxMesh_q5v6y")
-skeleton = NodePath("../../Row")
+[node name="bin" parent="Level/Row2" unique_id=8441347 instance=ExtResource("10_gmyll")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 16.094116, -6.39385, -22.538439)
 
 [node name="Pepperoni" type="Tractable" parent="Level/Row2" unique_id=1720209439 node_paths=PackedStringArray("RigidBody")]
 Points = 5
