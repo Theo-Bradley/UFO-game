@@ -1,3 +1,6 @@
-Changed player speed and traction force
-Added garbage bins to level (bin.gltf/.blend)
-Limited Y movement
+Gave player UFO a basic texture
+Added UFO_base_shader, a modified version of the StandardMaterial3D shader
+    -with flipped coords (to work with GradientTexture1D)
+    -transparency enabled
+Added UFO_colors GradientTexture1D to control the colors for the UFO
+Added UFO_textured.tscn inherited scene with the shader and texture applied

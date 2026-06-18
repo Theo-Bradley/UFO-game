@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du82tk4eyc8gp"]
 
 [ext_resource type="Script" uid="uid://ck31uu4obs1vx" path="res://Movement/tractor_beam.gd" id="1_5wxv7"]
-[ext_resource type="PackedScene" uid="uid://nlm8h2wk2qo1" path="res://Models/UFO/UFO.glb" id="1_y5hcb"]
+[ext_resource type="PackedScene" uid="uid://bqxvpisijrliu" path="res://Models/UFO/ufo_textured.tscn" id="1_y5hcb"]
 [ext_resource type="Script" uid="uid://cqa15nnvcwhxb" path="res://Movement/tractor_collect.gd" id="2_y5hcb"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7qhix"]
