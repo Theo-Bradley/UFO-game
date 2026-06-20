@@ -25,7 +25,7 @@ radius = 0.8442608
 [node name="Player" type="Node3D" unique_id=277190972]
 
 [node name="PlayerMove" type="PlayerMove" parent="." unique_id=1727391010 node_paths=PackedStringArray("RigidBody")]
-"Max Speed" = 15.0
+"Max Speed" = 17.5
 "Moving Acceleration" = 15.0
 "Turning Speed" = 18.912
 "Vertical Speed" = 2.5
@@ -47,7 +47,6 @@ mesh = SubResource("SphereMesh_7qhix")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerMove/RigidBody3D" unique_id=1045904271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207031, -0.0051116943, -0.00010681152)
 shape = SubResource("CylinderShape3D_2nftw")
-disabled = true
 
 [node name="TractorOrigin" type="Node3D" parent="PlayerMove/RigidBody3D" unique_id=2026967910]
 script = ExtResource("1_5wxv7")

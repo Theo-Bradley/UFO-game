@@ -60,17 +60,17 @@ void Tractable::_physics_process(double delta)
 	{
 		int n = 0;
 		Vector3 mean_pos = Vector3(0.0f, 0.0f, 0.0f);
-		for (Array::Iterator pos = positions.begin(); pos != positions.end(); ++pos)
+		for (Array::Iterator pos = positions.begin(); pos != positions.end(); ++pos) //loop over every force and get the mean position
 		{
 			n += 1;
 			mean_pos += *pos;
 		}
-		if (n > 0)
+		if (n > 0) //if there were some force applied
 		{
-			mean_pos = mean_pos / n;
+			mean_pos = mean_pos / n; //calculate mean pos
 			if (rigidbody.is_valid())
 			{
-				get_rigidbody()->apply_impulse(force_strength * n * force_direction.normalized(), mean_pos);
+				get_rigidbody()->apply_impulse(force_strength * n * force_direction.normalized(), mean_pos); //apply force and scale based on how many forces (individual rays) applied
 			}
 		}
 		positions.clear();

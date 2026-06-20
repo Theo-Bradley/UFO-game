@@ -28,10 +28,10 @@ void CameraFollow::_physics_process(double delta)
 {
 	if (delay_array != nullptr && target.is_valid())
 	{
-		delay_array[(array_index + delay_frames - 1) % delay_frames] = get_target()->get_global_position();
-		float speed_zoom = Math::clamp(Math::pow(get_target()->get_linear_velocity().length(), 1.0f / 1.2f), 0.0f, 2.0f);
-		set_global_position(delay_array[array_index] + offset + (speed_zoom * (Vector3(0.0f, 0.0f, 1.0f))));
-		look_at(delay_array[array_index] + (tilt_offset - tilt_offset * (speed_zoom / 1.5f)));
+		delay_array[(array_index + delay_frames - 1) % delay_frames] = get_target()->get_global_position(); //write one position behind the current
+		float speed_zoom = Math::clamp(Math::pow(get_target()->get_linear_velocity().length(), 1.0f / 1.2f), 0.0f, 2.0f); //zoom out based on speed
+		set_global_position(delay_array[array_index] + offset + (speed_zoom * (Vector3(0.0f, 0.0f, 1.0f)))); //set global pos next pos in te delay_array
+		look_at(delay_array[array_index] + (tilt_offset - tilt_offset * (speed_zoom / 1.5f))); //look at target pos from delay_array
 		array_index = ++array_index % delay_frames;
 	}
 }
@@ -50,7 +50,7 @@ void CameraFollow::init_delay_array()
 	if (target.is_valid())
 	{
 		Vector3 pos = get_target()->get_global_position();
-		for (int i = 0; i < delay_frames; i++)
+		for (int i = 0; i < delay_frames; i++) //populate array with target inital pos
 		{
 			delay_array[i] = pos;
 		}

@@ -20,7 +20,7 @@
 			The speed at which the [RigidBody3D] turns to face the movement direction in radians per second.
 		</member>
 		<member name="Vertical Speed" type="" getter="" setter="">
-			The speed at which the [RigidBody3D] moves up and down. The Y height is limited to greater than -6 and less than 6.
+			The speed at which the [RigidBody3D] moves up and down. The Y height is limited to greater than -6 and less than 5.
 		</member>
 	</members>
 	<methods>
