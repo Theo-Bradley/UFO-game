@@ -5,7 +5,6 @@
 #include "godot_cpp/variant/variant.hpp"
 #include "godot_cpp/classes/rigid_body3d.hpp"
 #include "godot_cpp/classes/engine.hpp"
-#include "globals.h"
 
 using namespace godot;
 
@@ -17,6 +16,7 @@ protected:
 	ObjectID rigidbody;
 	Array positions;
 	Vector3 force_direction;
+	float force_strength = 0.f;
 	int points = 1;
 
 public:
@@ -24,8 +24,8 @@ public:
 	~Tractable() override = default;
 	void _physics_process(double delta);
 
-	void add_global_force(Vector3 global_position, Vector3 direction);
-	void add_local_force(Vector3 local_position, Vector3 direction);
+	void add_global_force(Vector3 global_position, Vector3 direction, float force);
+	void add_local_force(Vector3 local_position, Vector3 direction, float force);
 	int collect();
 
 	RigidBody3D* get_rigidbody();

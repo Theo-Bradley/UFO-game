@@ -1,4 +1,4 @@
-Added camera speed zooming
-Changed player height
-Changed Collection Area size
-Changed Globals::tractor_beam_force
+Added walls
+Added some comments
+Limited player height to 5
+Reenabled player collision

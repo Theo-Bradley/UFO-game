@@ -26,13 +26,13 @@
 		<method name="add_global_force" qualifiers="">
 			<return type="void">
 			<description>
-			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]global_position[/code] representing the global position of the force and a [Vector3] [code]direction[/code] representing the direction of actio nof the force.
+			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]global_position[/code] representing the global position of the force and a [Vector3] [code]direction[/code] representing the direction of action of the force of strength [code]force[/code].
 			</description>
 		</method>
 		<method name="add_local_force" qualifiers="">
 			<return type="void">
 			<description>
-			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]local_position[/code] representing the local position of the force and a [Vector3] [code]direction[/code] representing the direction of actio nof the force.
+			Used to add a force to the object's [Rigidbody3D] using a [Vector3] [code]local_position[/code] representing the local position of the force and a [Vector3] [code]direction[/code] representing the direction of action of the force of strength [code]force[/code].
 			</description>
 		</method>
 		<method name="print_type" qualifiers="const">

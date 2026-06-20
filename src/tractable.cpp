@@ -10,18 +10,19 @@ void Tractable::_bind_methods()
 	ClassDB::bind_method(D_METHOD("set_rigidbody", "ref"), &Tractable::set_rigidbody);
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "RigidBody", PROPERTY_HINT_NODE_TYPE, "RigidBody3D"), "set_rigidbody", "get_rigidbody");
 
-	ClassDB::bind_method(D_METHOD("add_global_force", "global_position", "direction"), &Tractable::add_global_force);
-	ClassDB::bind_method(D_METHOD("add_local_force", "local_position", "direction"), &Tractable::add_local_force);
+	ClassDB::bind_method(D_METHOD("add_global_force", "global_position", "direction", "force"), &Tractable::add_global_force);
+	ClassDB::bind_method(D_METHOD("add_local_force", "local_position", "direction", "force"), &Tractable::add_local_force);
 	ClassDB::bind_method(D_METHOD("collect"), &Tractable::collect);
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &Tractable::print_type);
 }
 
-void Tractable::add_global_force(Vector3 global_position, Vector3 direction)
+void Tractable::add_global_force(Vector3 global_position, Vector3 direction, float force)
 {
 	if (!is_queued_for_deletion() && rigidbody.is_valid())
 	{
 		positions.append(get_rigidbody()->get_basis().xform(global_position)); //make position local
 		force_direction = direction;
+		force_strength = force;
 	}
 #ifdef _DEBUG
 	else
@@ -31,12 +32,13 @@ void Tractable::add_global_force(Vector3 global_position, Vector3 direction)
 #endif
 }
 
-void Tractable::add_local_force(Vector3 local_position, Vector3 direction)
+void Tractable::add_local_force(Vector3 local_position, Vector3 direction, float force)
 {
 	if (!is_queued_for_deletion() && rigidbody.is_valid())
 	{
 		positions.append(get_rigidbody()->get_basis().xform(local_position)); //make position local
 		force_direction = direction;
+		force_strength = force;
 	}
 #ifdef _DEBUG
 	else
@@ -56,20 +58,19 @@ void Tractable::_physics_process(double delta)
 {
 	if (!is_queued_for_deletion())
 	{
-		float force = Object::cast_to<Globals>(Engine::get_singleton()->get_singleton("Globals"))->tractor_beam_force;
 		int n = 0;
 		Vector3 mean_pos = Vector3(0.0f, 0.0f, 0.0f);
-		for (Array::Iterator pos = positions.begin(); pos != positions.end(); ++pos)
+		for (Array::Iterator pos = positions.begin(); pos != positions.end(); ++pos) //loop over every force and get the mean position
 		{
 			n += 1;
 			mean_pos += *pos;
 		}
-		if (n > 0)
+		if (n > 0) //if there were some force applied
 		{
-			mean_pos = mean_pos / n;
+			mean_pos = mean_pos / n; //calculate mean pos
 			if (rigidbody.is_valid())
 			{
-				get_rigidbody()->apply_impulse(force * force_direction.normalized(), mean_pos);
+				get_rigidbody()->apply_impulse(force_strength * n * force_direction.normalized(), mean_pos); //apply force and scale based on how many forces (individual rays) applied
 			}
 		}
 		positions.clear();

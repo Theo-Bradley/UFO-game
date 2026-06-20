@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://fju1o01t1olu"]
+
+[ext_resource type="Material" uid="uid://ck3j3jeyiqahf" path="res://Models/Kitchen Props/flame_particle.tres" id="1_03qrh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hf5xv"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_specular_occlusion = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+disable_receive_shadows = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_kb7ik"]
+material = SubResource("StandardMaterial3D_hf5xv")
+radius = 0.04
+height = 0.08
+radial_segments = 4
+rings = 2
+
+[node name="flame" type="GPUParticles3D" unique_id=430021070]
+amount = 75
+lifetime = 0.75
+visibility_aabb = AABB(-0.25, -0.15, -0.25, 0.5, 0.5, 0.5)
+process_material = ExtResource("1_03qrh")
+draw_pass_1 = SubResource("SphereMesh_kb7ik")
