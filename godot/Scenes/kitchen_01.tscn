@@ -387,6 +387,8 @@ size = Vector3(90.71498, 15.183533, 1.4326477)
 
 [node name="Kitchen01" type="Node3D" unique_id=1286124264]
 
+[node name="SumPoints" type="SumPoints" parent="." unique_id=985194249]
+
 [node name="Player" parent="." unique_id=277190972 instance=ExtResource("1_bidqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.343567, 0, 8.159373)
 
