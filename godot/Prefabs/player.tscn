@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du82tk4eyc8gp"]
 
 [ext_resource type="Script" uid="uid://ck31uu4obs1vx" path="res://Movement/tractor_beam.gd" id="1_5wxv7"]
-[ext_resource type="PackedScene" uid="uid://bqxvpisijrliu" path="res://Models/UFO/ufo_textured.tscn" id="1_y5hcb"]
+[ext_resource type="PackedScene" uid="uid://bqxvpisijrliu" path="res://Models/UFO/UFO_textured.tscn" id="1_y5hcb"]
 [ext_resource type="Script" uid="uid://cqa15nnvcwhxb" path="res://Movement/tractor_collect.gd" id="2_y5hcb"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7qhix"]
@@ -34,8 +34,11 @@ RigidBody = NodePath("RigidBody3D")
 [node name="RigidBody3D" type="RigidBody3D" parent="PlayerMove" unique_id=1704281599]
 collision_layer = 2
 collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 gravity_scale = 0.0
 linear_damp = 2.0
+angular_damp = 15.0
 
 [node name="UFO" parent="PlayerMove/RigidBody3D" unique_id=555372883 instance=ExtResource("1_y5hcb")]
 transform = Transform3D(1.1, 0, 0, 0, 0.9, 0, 0, 0, 1.1, 0, 0, 0)

@@ -1,4 +1,10 @@
-Added walls
-Added some comments
-Limited player height to 5
-Reenabled player collision
+Added points based progress bar
+Added UI Control node to server as the GUI parent
+Added UI folder with base_theme and some colour textures
+Added code to SumPoints to add the property Total Points
+Added UIManager node with ui_manager.gd script to control the UI
+Added code to tractor_collect.gd to return the collected points to the UIManager
+Added functionality to ui_manager.gd to control the progress bar by setting max_value to the int returned by SumPoints and setting value to the current points collected.
+
+Locked player rotation
+Added angular damping to player

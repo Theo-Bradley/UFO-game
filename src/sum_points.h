@@ -18,6 +18,10 @@ public:
 	~SumPoints() override = default;
 	void _ready();
 	TypedArray<Node> traverse_children(Node* parent);
-
+	int total_points = 0;
+	void points_collected(int amt);
+	
+	void set_total_points(int amt);
+	int get_total_points();
 	void print_type(const Variant &p_variant) const;
 };

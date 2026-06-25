@@ -1,6 +1,13 @@
 #include "sum_points.h"
 
-void SumPoints::_bind_methods() {
+void SumPoints::_bind_methods()
+{
+	ClassDB::bind_method(D_METHOD("set_total_points", "amt"), &SumPoints::set_total_points);
+	ClassDB::bind_method(D_METHOD("get_total_points"), &SumPoints::get_total_points);
+	ADD_PROPERTY(PropertyInfo(Variant::INT, "Total Points"), "set_total_points", "get_total_points");
+
+	ClassDB::bind_method(D_METHOD("points_collected", "amt"), &SumPoints::points_collected);
+
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &SumPoints::print_type);
 }
 
@@ -11,16 +18,16 @@ void SumPoints::print_type(const Variant &p_variant) const {
 void SumPoints::_ready()
 {
 	TypedArray<Node> nodes = traverse_children(get_tree()->get_current_scene()); //get all nodes in scene
-	int total_points = 0;
+	int points = 0;
 	for (Array::Iterator node = nodes.begin(); node != nodes.end(); ++node) //loop over every node
 	{
 		Object* current = (*node).get_validated_object();
 		if (current != nullptr && current->get_class() == "Tractable") //if it is a valid object and of type Tractable
 		{
-			total_points += (int)(current->get("Points")); //add points to total
+			points += (int)(current->get("Points")); //add points to total
 		}
 	}
-	print_line(total_points);
+	set_total_points(points);
 }
 
 TypedArray<Node> SumPoints::traverse_children(Node* parent) //depth wise recursive Node search
@@ -44,4 +51,19 @@ TypedArray<Node> SumPoints::traverse_children(Node* parent) //depth wise recursi
 		}
 		return result; //after looping over all children, close this recursive branch
 	}
+}
+
+void SumPoints::points_collected(int amt)
+{
+	print_line(amt);
+}
+
+void SumPoints::set_total_points(int amt)
+{
+	total_points = amt;
+}
+
+int SumPoints::get_total_points()
+{
+	return total_points;
 }

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b6jirnckvb7wf"]
 
+[ext_resource type="Script" uid="uid://bpwd4ls1i2map" path="res://Scripts/ui_manager.gd" id="1_3lh5p"]
 [ext_resource type="PackedScene" uid="uid://du82tk4eyc8gp" path="res://Prefabs/player.tscn" id="1_bidqp"]
+[ext_resource type="Texture2D" uid="uid://bijh3fu1pq2wm" path="res://UI/prog_under.tres" id="1_c76dw"]
+[ext_resource type="Theme" uid="uid://ca3g4ffknsou7" path="res://UI/base_theme.tres" id="1_kb7ik"]
 [ext_resource type="PackedScene" uid="uid://ypadofknawm7" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink_large.gltf" id="2_k4xwx"]
+[ext_resource type="Texture2D" uid="uid://bigq5ucakxxyk" path="res://UI/prog_prog.tres" id="3_3lh5p"]
 [ext_resource type="PackedScene" uid="uid://syxcuuhdugav" path="res://Models/Kitchen Props/fridge_door.gltf" id="3_8acsq"]
 [ext_resource type="PackedScene" uid="uid://d36r0bqsoaoge" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchentable_sink.gltf" id="3_ad6rl"]
 [ext_resource type="PackedScene" uid="uid://b1vb3wcxfp84y" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/dishrack_flat.gltf" id="4_1o1wr"]
@@ -388,6 +392,40 @@ size = Vector3(90.71498, 15.183533, 1.4326477)
 [node name="Kitchen01" type="Node3D" unique_id=1286124264]
 
 [node name="SumPoints" type="SumPoints" parent="." unique_id=985194249]
+
+[node name="UIManager" type="Node" parent="." unique_id=1827832326 node_paths=PackedStringArray("sum_points", "points_progress_bar")]
+script = ExtResource("1_3lh5p")
+sum_points = NodePath("../SumPoints")
+points_progress_bar = NodePath("../UI/PanelContainer/TextureProgressBar")
+
+[node name="UI" type="Control" parent="." unique_id=2074334297]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -333.0
+offset_bottom = 92.0
+grow_horizontal = 0
+theme = ExtResource("1_kb7ik")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1985833824]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -331.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme = ExtResource("1_kb7ik")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/PanelContainer" unique_id=917619355]
+layout_mode = 2
+theme = ExtResource("1_kb7ik")
+nine_patch_stretch = true
+texture_under = ExtResource("1_c76dw")
+texture_progress = ExtResource("3_3lh5p")
 
 [node name="Player" parent="." unique_id=277190972 instance=ExtResource("1_bidqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.343567, 0, 8.159373)
