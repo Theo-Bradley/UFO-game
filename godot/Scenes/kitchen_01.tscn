@@ -393,10 +393,11 @@ size = Vector3(90.71498, 15.183533, 1.4326477)
 
 [node name="SumPoints" type="SumPoints" parent="." unique_id=985194249]
 
-[node name="UIManager" type="Node" parent="." unique_id=1827832326 node_paths=PackedStringArray("sum_points", "points_progress_bar")]
+[node name="UIManager" type="Node" parent="." unique_id=1827832326 node_paths=PackedStringArray("sum_points", "points_progress_bar", "points_label")]
 script = ExtResource("1_3lh5p")
 sum_points = NodePath("../SumPoints")
 points_progress_bar = NodePath("../UI/PanelContainer/TextureProgressBar")
+points_label = NodePath("../UI/PointsLabel")
 
 [node name="UI" type="Control" parent="." unique_id=2074334297]
 layout_mode = 3
@@ -426,6 +427,19 @@ theme = ExtResource("1_kb7ik")
 nine_patch_stretch = true
 texture_under = ExtResource("1_c76dw")
 texture_progress = ExtResource("3_3lh5p")
+
+[node name="PointsLabel" type="Label" parent="UI" unique_id=1019596458]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.447
+anchor_right = -2.447
+offset_left = 18.851013
+offset_top = 9.0
+offset_right = 92.85101
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
 
 [node name="Player" parent="." unique_id=277190972 instance=ExtResource("1_bidqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.343567, 0, 8.159373)

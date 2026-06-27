@@ -2,6 +2,7 @@ extends Node
 
 @export var sum_points : SumPoints;
 @export var points_progress_bar : TextureProgressBar;
+@export var points_label : Label;
 
 var current_points : int = 0;
 var total_points : int = 0;
@@ -22,6 +23,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (points_progress_bar != null && total_points != null):
 		points_progress_bar.value = current_points;
+	if (points_label != null && total_points != null):
+		points_label.text = str(current_points);
+		
 
 func points_collected(amt: int) -> void:
 	current_points += amt;
