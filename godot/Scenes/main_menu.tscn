@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://upwjlogqfi68"]
+
+[ext_resource type="FontFile" uid="uid://dpbjh6q35l0dw" path="res://UI/font/LifeFormBB.ttf" id="1_1ehe0"]
+[ext_resource type="Theme" uid="uid://ca3g4ffknsou7" path="res://UI/base_theme.tres" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://efxultttkssj" path="res://UI/play.png" id="3_n45e2"]
+[ext_resource type="PackedScene" uid="uid://bqxvpisijrliu" path="res://Models/UFO/UFO_textured.tscn" id="4_ce3w2"]
+[ext_resource type="Script" uid="uid://y8py1ojb64e6" path="res://Scripts/play_button.gd" id="4_n45e2"]
+[ext_resource type="PackedScene" uid="uid://b6jirnckvb7wf" path="res://Scenes/kitchen_01.tscn" id="5_opfnp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ehe0"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(1, 0.48819315, 0.16018957, 1)
+sky_curve = 0.06997752
+ground_bottom_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ce3w2"]
+sky_material = SubResource("ProceduralSkyMaterial_1ehe0")
+
+[sub_resource type="Environment" id="Environment_n45e2"]
+background_mode = 2
+sky = SubResource("Sky_ce3w2")
+
+[sub_resource type="Animation" id="Animation_ce3w2"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_n45e2"]
+resource_name = "main_menu_anim"
+length = 3.2666667
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.3526857, 0, -4.9782066, 1.6333333, 1, 3.3341992, 0, -4.9782066, 3.2, 1, -3.3526857, 0, -4.9782066)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.4, 1, 0, 0, -0.246153, 0.969231, 1.0666667, 1, 0, 0, -0.246153, 0.969231, 1.3666667, 1, 0, 0, 0, 1, 1.9, 1, 0, 0, 0.246153, 0.969231, 2.84, 1, 0, 0, 0.246153, 0.969231, 3.2666667, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opfnp"]
+_data = {
+&"RESET": SubResource("Animation_ce3w2"),
+&"main_menu_anim": SubResource("Animation_n45e2")
+}
+
+[node name="MainMenu" type="Node3D" unique_id=1642816164]
+metadata/_edit_horizontal_guides_ = [-80.0]
+
+[node name="Control" type="Control" parent="." unique_id=262662129]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 492.0
+offset_bottom = 209.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1218450226]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.1570001
+anchor_top = 0.5
+anchor_right = 1.1570001
+anchor_bottom = 0.5
+offset_left = -89.24402
+offset_top = 112.5
+offset_right = 88.75598
+offset_bottom = 240.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.25216663, 0.89, 0, 0.6313726)
+theme_override_fonts/font = ExtResource("1_1ehe0")
+theme_override_font_sizes/font_size = 128
+text = "UFO"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=328522083]
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.167
+anchor_top = 1.6070001
+anchor_right = 1.167
+anchor_bottom = 1.6070001
+offset_left = -62.164
+offset_top = 38.136963
+offset_right = 61.836
+offset_bottom = 162.13696
+theme = ExtResource("2_ce3w2")
+
+[node name="Button" type="Button" parent="Control/PanelContainer" unique_id=1814296361]
+layout_mode = 2
+icon = ExtResource("3_n45e2")
+expand_icon = true
+script = ExtResource("4_n45e2")
+next_scene = ExtResource("5_opfnp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=625407965]
+environment = SubResource("Environment_n45e2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=130190481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.085832, 0, 0)
+
+[node name="UFO2" parent="." unique_id=555372883 instance=ExtResource("4_ce3w2")]
+transform = Transform3D(1.1, 0, 0, 0, 0.9, 0, 0, 0, 1.1, 0.8786191, 0, -4.9782066)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UFO2" unique_id=1300566703]
+libraries/ = SubResource("AnimationLibrary_opfnp")
+autoplay = &"main_menu_anim"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=598915459]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.03877926, 3.2663476, -5.235239)
+light_color = Color(0.99019855, 0.67218584, 0.5103454, 1)
+light_energy = 12.333
+spot_range = 7.071
+spot_angle = 39.11
+
+[connection signal="pressed" from="Control/PanelContainer/Button" to="Control/PanelContainer/Button" method="button_pressed"]

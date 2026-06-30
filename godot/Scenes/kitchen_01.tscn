@@ -454,8 +454,8 @@ Target = NodePath("../Player/PlayerMove/RigidBody3D")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=806823498]
 transform = Transform3D(0.24382111, 0.969489, 0.025350329, -0.10984172, 0.0016346943, 0.9939478, 0.96357995, -0.24512996, 0.10688889, -17.177628, 5, 0)
-light_color = Color(1, 0.989, 0.89, 1)
-light_energy = 0.5
+light_color = Color(1, 1, 0.85882354, 1)
+light_energy = 0.7
 shadow_enabled = true
 directional_shadow_mode = 1
 directional_shadow_blend_splits = true
