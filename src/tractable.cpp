@@ -12,6 +12,10 @@ void Tractable::_bind_methods()
 
 	ClassDB::bind_method(D_METHOD("add_global_force", "global_position", "direction", "force"), &Tractable::add_global_force);
 	ClassDB::bind_method(D_METHOD("add_local_force", "local_position", "direction", "force"), &Tractable::add_local_force);
+	
+	ClassDB::bind_method(D_METHOD("get_collect_particles"), &Tractable::get_collect_particles);
+	ClassDB::bind_method(D_METHOD("set_collect_particles", "ref"), &Tractable::set_collect_particles);
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "Collect Particles"), "set_collect_particles", "get_collect_particles");
 	ClassDB::bind_method(D_METHOD("collect"), &Tractable::collect);
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &Tractable::print_type);
 }
@@ -50,8 +54,20 @@ void Tractable::add_local_force(Vector3 local_position, Vector3 direction, float
 
 int Tractable::collect()
 {
-	queue_free();
-	return points;
+	if (!is_queued_for_deletion())
+	{
+		if (collect_particles != nullptr)
+		{		
+			Node3D* particles = cast_to<Node3D>(collect_particles->instantiate());
+			get_tree()->get_current_scene()->add_child(particles);
+			particles->set_global_position(get_rigidbody()->get_global_position());
+		}
+
+		queue_free();
+		return points;
+	}
+	else //avoid getting double points if double collected
+		return 0;
 }
 
 void Tractable::_physics_process(double delta)
@@ -95,6 +111,16 @@ void Tractable::set_points(int val)
 int Tractable::get_points()
 {
 	return points;
+}
+
+Ref<PackedScene> Tractable::get_collect_particles()
+{
+	return collect_particles;
+}
+
+void Tractable::set_collect_particles(Ref<PackedScene> ref)
+{
+	collect_particles = ref;
 }
 
 void Tractable::print_type(const Variant& p_variant) const

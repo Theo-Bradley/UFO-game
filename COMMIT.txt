@@ -1,2 +1,2 @@
-Added main menu
-Changed kitchen_01 sun light warmth
+Added collect particles
+Changed Tractable::collect() to only return points once even on subsequent re-calls to fix potential bug
