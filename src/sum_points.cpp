@@ -6,8 +6,6 @@ void SumPoints::_bind_methods()
 	ClassDB::bind_method(D_METHOD("get_total_points"), &SumPoints::get_total_points);
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "Total Points"), "set_total_points", "get_total_points");
 
-	ClassDB::bind_method(D_METHOD("points_collected", "amt"), &SumPoints::points_collected);
-
 	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &SumPoints::print_type);
 }
 
@@ -51,11 +49,6 @@ TypedArray<Node> SumPoints::traverse_children(Node* parent) //depth wise recursi
 		}
 		return result; //after looping over all children, close this recursive branch
 	}
-}
-
-void SumPoints::points_collected(int amt)
-{
-	print_line(amt);
 }
 
 void SumPoints::set_total_points(int amt)

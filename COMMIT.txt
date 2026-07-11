@@ -1,2 +1,2 @@
-Added collect particles
-Changed Tractable::collect() to only return points once even on subsequent re-calls to fix potential bug
+Added documentation for SumPoints and updated docs for Tractable
+Removed collect_points in Tractable

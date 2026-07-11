@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<class name="Tractable" inherits="Node3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+<class name="SumPoints" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
 	<brief_description>
-		Class for objects that can be attracted by the UFO.
+		Node Class that finds all the [Tractable] nodes in the scene and sums their points to [code]total_points[/code]
 	</brief_description>
 	<description>
-		This Class should be the parent of the object's [RigidBody3D]. This will (once setup) will allow the object to be attracted by the UFO's tractor beam.
-		The [Rigidbody3D] should be on collision layer 3 (Tractables) to be hit by the tracotr beam, and layer 1 (All) if it should collide with other objects.
-		The Class requires a reference to the object's [RigidBody3D] and should be setup with a [param Points] to reward the player for sucessfully picking it up.
+		This class uses a deptwise search in [code]traveser_children()[/code] to find all the nodes in the scene. In [method _ready] the results are looped over, and if the class matches [Tractable] then the code gets property [code]Points[/code] and adds it to [code]total_points[/code].
 	</description>
 	<members>
 		<member name="Points" type="" getter="" setter="">
