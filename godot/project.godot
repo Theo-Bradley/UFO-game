@@ -67,6 +67,7 @@ Downward={
 3d_physics/layer_1="All"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Tractables"
+3d_physics/layer_4="Statics"
 
 [physics]
 

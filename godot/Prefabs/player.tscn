@@ -32,8 +32,8 @@ radius = 0.8442608
 RigidBody = NodePath("RigidBody3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="PlayerMove" unique_id=1704281599]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 10
+collision_mask = 10
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 gravity_scale = 0.0
@@ -54,7 +54,7 @@ shape = SubResource("CylinderShape3D_2nftw")
 script = ExtResource("1_5wxv7")
 numRays = 20
 ray_height = 3.5
-traction_force = 0.05
+traction_force = 0.075
 ImmediateGeo = SubResource("ImmediateMesh_3gamy")
 
 [node name="TractorMesh" type="MeshInstance3D" parent="PlayerMove/RigidBody3D/TractorOrigin" unique_id=1920690472]
