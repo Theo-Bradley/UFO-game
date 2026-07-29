@@ -402,12 +402,11 @@ points_label = NodePath("../UI/PointsLabel")
 
 [node name="UI" type="Control" parent="." unique_id=2074334297]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -333.0
-offset_bottom = 92.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_kb7ik")
 
 [node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1985833824]
@@ -417,8 +416,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -331.0
-offset_bottom = 40.0
+offset_left = -341.0
+offset_top = 14.0
+offset_right = -10.0
+offset_bottom = 54.0
 grow_horizontal = 0
 theme = ExtResource("1_kb7ik")
 
@@ -431,13 +432,10 @@ texture_progress = ExtResource("3_3lh5p")
 
 [node name="PointsLabel" type="Label" parent="UI" unique_id=1019596458]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.447
-anchor_right = -2.447
-offset_left = 18.851013
-offset_top = 9.0
-offset_right = 92.85101
-offset_bottom = 54.0
+offset_left = 19.0
+offset_top = 12.0
+offset_right = 93.0
+offset_bottom = 57.0
 theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 2
@@ -725,13 +723,13 @@ shape = SubResource("BoxShape3D_j552k")
 
 [node name="Counters" type="Node" parent="Level/Row" unique_id=1138354908]
 
-[node name="kitchencounter_straight_B_styleB_flat" parent="Level/Row/Counters" unique_id=930643138 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat" parent="Level/Row/Counters" unique_id=316439252 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, 12.565128)
 
-[node name="kitchencounter_straight_B_styleB_flat2" parent="Level/Row/Counters" unique_id=1879000607 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat2" parent="Level/Row/Counters" unique_id=1740206980 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, 4.565129)
 
-[node name="kitchencounter_straight_B_styleB_flat3" parent="Level/Row/Counters" unique_id=1901657503 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat3" parent="Level/Row/Counters" unique_id=1559298226 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -0.14021625, -7.468, -3.2348719)
 
 [node name="kitchencounter_straight_B_top_only_backsplash_styleB_flat" parent="Level/Row/Counters" unique_id=1764817730 instance=ExtResource("12_jghi2")]
@@ -1810,13 +1808,13 @@ debug_color = Color(1, 0.078431375, 0.05490196, 0.9764706)
 
 [node name="Counters" type="Node" parent="Level/Row2" unique_id=1741093418]
 
-[node name="kitchencounter_straight_B_styleB_flat4" parent="Level/Row2/Counters" unique_id=1126255616 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat4" parent="Level/Row2/Counters" unique_id=1485790288 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 15.956316, -7.468, -15.157124)
 
-[node name="kitchencounter_straight_B_styleB_flat5" parent="Level/Row2/Counters" unique_id=1506770299 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat5" parent="Level/Row2/Counters" unique_id=1289958555 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 15.956317, -7.468, -7.1571236)
 
-[node name="kitchencounter_straight_B_styleB_flat6" parent="Level/Row2/Counters" unique_id=1501037886 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat6" parent="Level/Row2/Counters" unique_id=618756257 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 15.956318, -7.468, 0.6428776)
 
 [node name="kitchencounter_straight_B_styleB_flat7" parent="Level/Row2/Counters" unique_id=356651340 instance=ExtResource("12_jghi2")]
@@ -2364,16 +2362,16 @@ shape = SubResource("ConvexPolygonShape3D_8acsq")
 
 [node name="Counters" type="Node" parent="Level/Row3" unique_id=286882544]
 
-[node name="kitchencounter_straight_B_styleB_flat4" parent="Level/Row3/Counters" unique_id=1590277948 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat4" parent="Level/Row3/Counters" unique_id=1409183212 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 33.604145, -7.46, 15.9632015)
 
-[node name="kitchencounter_straight_B_styleB_flat5" parent="Level/Row3/Counters" unique_id=602693271 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat5" parent="Level/Row3/Counters" unique_id=919911596 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 33.604, -7.46, 8.01)
 
 [node name="Counter" type="StaticBody3D" parent="Level/Row3/Counters" unique_id=1589252593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.604, -7.46, -19.858517)
 
-[node name="kitchencounter_straight_B_styleB_flat6" parent="Level/Row3/Counters/Counter" unique_id=140164979 instance=ExtResource("9_skh0u")]
+[node name="kitchencounter_straight_B_styleB_flat6" parent="Level/Row3/Counters/Counter" unique_id=582722991 instance=ExtResource("9_skh0u")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Row3/Counters/Counter" unique_id=2101120918]
