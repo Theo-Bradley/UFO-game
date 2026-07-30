@@ -9,6 +9,7 @@
 #include "Player/player_move.h"
 #include "tractable.h"
 #include "camera_follow.h"
+#include "sum_points.h"
 
 using namespace godot;
 
@@ -22,6 +23,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	GDREGISTER_RUNTIME_CLASS(PlayerMove);
 	GDREGISTER_RUNTIME_CLASS(Tractable);
 	GDREGISTER_RUNTIME_CLASS(CameraFollow);
+	GDREGISTER_RUNTIME_CLASS(SumPoints);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

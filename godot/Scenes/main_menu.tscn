@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://upwjlogqfi68"]
+
+[ext_resource type="FontFile" uid="uid://dpbjh6q35l0dw" path="res://UI/font/LifeFormBB.ttf" id="1_1ehe0"]
+[ext_resource type="Theme" uid="uid://ca3g4ffknsou7" path="res://UI/base_theme.tres" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://efxultttkssj" path="res://UI/play.png" id="3_n45e2"]
+[ext_resource type="PackedScene" uid="uid://bqxvpisijrliu" path="res://Models/UFO/UFO_textured.tscn" id="4_ce3w2"]
+[ext_resource type="Script" uid="uid://y8py1ojb64e6" path="res://Scripts/play_button.gd" id="4_n45e2"]
+[ext_resource type="PackedScene" uid="uid://b6jirnckvb7wf" path="res://Scenes/kitchen_01.tscn" id="5_opfnp"]
+[ext_resource type="PackedScene" uid="uid://cb2n1vtmvi4ki" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/kitchencounter_straight_B_styleB_flat.gltf" id="7_t1dhk"]
+[ext_resource type="PackedScene" uid="uid://bfnvkwku1oo4k" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_tomato_flat.gltf" id="8_5egv6"]
+[ext_resource type="PackedScene" uid="uid://dqodvk1joa00f" path="res://Models/Kitchen Props/chopping_board.gltf" id="9_vtepg"]
+[ext_resource type="PackedScene" uid="uid://f630p2h8aorl" path="res://Models/Kitchen Props/knife.blend" id="10_8dnnj"]
+[ext_resource type="PackedScene" uid="uid://mnjify2e6i1s" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/food_ingredient_lettuce_flat.gltf" id="11_m3bi6"]
+[ext_resource type="PackedScene" uid="uid://djt6prtnepm3l" path="res://Models/KayKit_Bits_Bundle1_1.1/Restaurant Bits/Assets/gltf/bowl.gltf" id="12_wyh8j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ehe0"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(1, 0.48819315, 0.16018957, 1)
+sky_curve = 0.06997752
+ground_bottom_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ce3w2"]
+sky_material = SubResource("ProceduralSkyMaterial_1ehe0")
+
+[sub_resource type="Environment" id="Environment_n45e2"]
+background_mode = 2
+sky = SubResource("Sky_ce3w2")
+
+[sub_resource type="Animation" id="Animation_ce3w2"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_n45e2"]
+resource_name = "main_menu_anim"
+length = 3.2666667
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.3526857, 0, -4.9782066, 1.6333333, 1, 3.3341992, 0, -4.9782066, 3.2, 1, -3.3526857, 0, -4.9782066)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.4, 1, 0, 0, -0.246153, 0.969231, 1.0666667, 1, 0, 0, -0.246153, 0.969231, 1.3666667, 1, 0, 0, 0, 1, 1.9, 1, 0, 0, 0.246153, 0.969231, 2.84, 1, 0, 0, 0.246153, 0.969231, 3.2666667, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opfnp"]
+_data = {
+&"RESET": SubResource("Animation_ce3w2"),
+&"main_menu_anim": SubResource("Animation_n45e2")
+}
+
+[node name="MainMenu" type="Node3D" unique_id=1642816164]
+metadata/_edit_horizontal_guides_ = [-80.0]
+
+[node name="Control" type="Control" parent="." unique_id=262662129]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -104.5
+offset_right = 246.0
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=1218450226]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -138.0
+offset_right = 89.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.25216663, 0.89, 0, 0.6313726)
+theme_override_fonts/font = ExtResource("1_1ehe0")
+theme_override_font_sizes/font_size = 128
+text = "UFO"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=328522083]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = 96.0
+offset_right = 62.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ce3w2")
+
+[node name="Button" type="Button" parent="Control/PanelContainer" unique_id=1814296361]
+layout_mode = 2
+icon = ExtResource("3_n45e2")
+expand_icon = true
+script = ExtResource("4_n45e2")
+next_scene = ExtResource("5_opfnp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=625407965]
+environment = SubResource("Environment_n45e2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=130190481]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0.085832, 0, 2.296905)
+
+[node name="UFO2" parent="." unique_id=555372883 instance=ExtResource("4_ce3w2")]
+transform = Transform3D(1.1, 0, 0, 0, 0.9, 0, 0, 0, 1.1, 0.8786191, 0, -4.9782066)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UFO2" unique_id=1300566703]
+libraries/ = SubResource("AnimationLibrary_opfnp")
+autoplay = &"main_menu_anim"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=881009229]
+transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0.03877926, 3.2663476, -2.5160475)
+light_color = Color(1, 0.965, 0.9, 1)
+light_energy = 0.8
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=598915459]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.039, 4, -5.235)
+light_color = Color(0.99, 0.89760005, 0.8514, 1)
+light_energy = 12.333
+spot_range = 7.071
+spot_angle = 51.049538
+
+[node name="kitchencounter_straight_B_styleB_flat" parent="." unique_id=316439252 instance=ExtResource("7_t1dhk")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.606498, -5, -5.044638)
+
+[node name="kitchencounter_straight_B_styleB_flat2" parent="." unique_id=1716380824 instance=ExtResource("7_t1dhk")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.3935015, -5, -5.0446377)
+
+[node name="food_ingredient_tomato_flat" parent="." unique_id=1190740196 instance=ExtResource("8_5egv6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9337015, -0.8254509, -3.8308587)
+
+[node name="food_ingredient_tomato_flat2" parent="." unique_id=1139252122 instance=ExtResource("8_5egv6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0413694, -0.8254509, -4.292521)
+
+[node name="chopping_board" parent="." unique_id=42753564 instance=ExtResource("9_vtepg")]
+transform = Transform3D(0.1282253, 3.2487087e-08, 1.7954272, 1.3411051e-08, 1.8000001, -3.3527616e-08, -1.7954272, 1.5765359e-08, 0.1282253, 4.0413694, -0.8254509, -4.1848536)
+
+[node name="knife2" parent="." unique_id=750994636 instance=ExtResource("10_8dnnj")]
+transform = Transform3D(0.5661295, -1.4746428e-08, -0.56524104, 5.9604655e-09, 0.8, -1.4901163e-08, 0.56524104, 6.3336105e-09, 0.5661295, -4.537753, -0.8254509, -4.718294)
+
+[node name="food_ingredient_lettuce_flat" parent="." unique_id=1797155015 instance=ExtResource("11_m3bi6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.1996164, -0.9670758, -4.4621735)
+
+[node name="bowl2" parent="." unique_id=606806022 instance=ExtResource("12_wyh8j")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -2.1921415, -0.9954004, -6.4085674)
+
+[connection signal="pressed" from="Control/PanelContainer/Button" to="Control/PanelContainer/Button" method="button_pressed"]

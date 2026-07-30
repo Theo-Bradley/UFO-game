@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="UFO game"
-run/main_scene="uid://b6jirnckvb7wf"
+run/main_scene="uid://upwjlogqfi68"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -67,10 +67,13 @@ Downward={
 3d_physics/layer_1="All"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Tractables"
+3d_physics/layer_4="Statics"
 
 [physics]
 
 3d/physics_engine="Jolt Physics"
+jolt_physics_3d/limits/max_linear_velocity=50.0
+jolt_physics_3d/limits/max_angular_velocity=4.71238898038469
 
 [rendering]
 

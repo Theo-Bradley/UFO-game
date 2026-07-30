@@ -1,4 +1,2 @@
-Added walls
-Added some comments
-Limited player height to 5
-Reenabled player collision
+Added documentation for SumPoints and updated docs for Tractable
+Removed collect_points in Tractable

@@ -17,6 +17,9 @@ CMakeUserPresets.json
 *.obj
 *.exp
 
+#exported project
+exports/*
+
 #PDBs
 *.pdb
 
